@@ -1,0 +1,14 @@
+.main{
+  display: flex;
+  display: -webkit-flex;
+}
+.center{
+  flex: 60%;
+  background-color: red;
+}
+.left{
+  flex: 20%;
+}
+.right{
+  flex: 20%;
+}
