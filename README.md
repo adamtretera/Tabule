@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Tabule
 
 Funkce:
@@ -27,3 +28,5 @@ Stránka bude rozdělena na dvě části:
   2. Vytoření části MIN
     1)Převedení MAX do interaktivního rozhraní
     2)Přidávání dalších elementů
+=======
+>>>>>>> 51d25076866c0ec98b405b7731a5edc89b256ba4
