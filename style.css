@@ -1,13 +1,35 @@
 body{
   font-family: 'Roboto', sans-serif;
+  margin: 0%;
 }
+
 header{
-    font-size: 300%;
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    background-image: url(img/concrete_seamless.png);
-    background-repeat: repeat-x;
-    margin: 0px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  margin: 0%;
+  background-image: url(img/concrete_seamless65.png);
+  background-repeat: repeat-x;
+  white-space: nowrap;
+}
+
+.clock{
+  font-size: 300%;
+  display: inline-block;
+}
+
+.usa{
+  color: rgba(0, 0, 0, 0.52);
+  font-size: 150%;
+  margin: 0%;
+  line-height: 90%;
+  display: inline;
+  display: inline-block;
+}
+
+#usaText{
+  font-size: 60%;
+  margin: 0%;
+  color: rgba(0, 0, 0, 0.25);
 }
 
 section .top{
