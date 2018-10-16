@@ -17,19 +17,24 @@ header{
   display: inline-block;
 }
 
-.usa{
+.timeSide{
   color: rgba(0, 0, 0, 0.52);
   font-size: 150%;
   margin: 0%;
   line-height: 90%;
   display: inline;
   display: inline-block;
+  padding-right: 0.3%;
 }
 
-#usaText{
+.timeText{
   font-size: 60%;
   margin: 0%;
   color: rgba(0, 0, 0, 0.25);
+}
+
+#usa{
+  padding-left: 0.3%;
 }
 
 section .top{
