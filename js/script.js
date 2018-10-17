@@ -1,48 +1,90 @@
 function showTime() {
   var date = new Date();
-  var h = date.getHours();
-  var m = date.getMinutes();
-  var hA; //USA
-  var hL; //London
-  var hT; //Tokyo
-  var hUTC; //Universal Time Zone
-  //var s = date.getSeconds();
+  var timeUTCMinutes = date.getUTCMinutes();
+  timeUTCMinutes = (timeUTCMinutes < 10) ? "0" + timeUTCMinutes : timeUTCMinutes;
+  var timeUTC =  date.getUTCHours() + ":" + timeUTCMinutes;
 
-  h = (h < 10) ? "0" + h : h;
-  hA = (hA < 10) ? "0" + h : h;
-  hL = (hL < 10) ? "0" + h : h;
-  hT = (hT < 10) ? "0" + h : h;
-  hUTC = (hUTC < 10) ? "0" + h : h;
-  m = (m < 10) ? "0" + m : m;
-  //s = (s < 10) ? "0" + s : s;
+  //h = (h < 10) ? "0" + h : h;
 
-  hA = h - 6;
-  hL = h - 1;
-  hT = h + 7;
-  hUTC = h - 2;
-
-  var time = h + ":" + m;
-  var timeA = hA + ":" + m;
-  var timeL = hL + ":" + m;
-  var timeT = hT + ":" + m;
-  var timeUTC = hUTC + ":" + m;
-
-  document.getElementById("mojehodiny").innerText = time;
-  document.getElementById("mojehodiny").textContent = time;
-
-  document.getElementById("hodinyA").innerText = timeA;
-  document.getElementById("hodinyA").textContent = timeA;
-
-  document.getElementById("hodinyL").innerText = timeL;
-  document.getElementById("hodinyL").textContent = timeL;
-
-  document.getElementById("hodinyT").innerText = timeT;
-  document.getElementById("hodinyT").textContent = timeT;
-
-  document.getElementById("hodinyUTC").innerText = timeUTC;
-  document.getElementById("hodinyUTC").textContent = timeUTC;
+  document.getElementById("utc").innerText = timeUTC;
+  document.getElementById("utc").textContent = timeUTC;
 
   setTimeout(showTime, 1000);
 }
 
+function showTimeCzech() {
+  var date = new Date();
+  date.setMinutes(date.getMinutes() + 120);
+
+  var timeCzechMinutes = date.getUTCMinutes();
+  var timeCzechHours = date.getUTCHours();
+
+  timeCzechMinutes = (timeCzechMinutes < 10) ? "0" + timeCzechMinutes : timeCzechMinutes;
+  timeCzechHours = (timeCzechHours < 10) ? "0" + timeCzechHours : timeCzechHours;
+
+  var timeCzech = timeCzechHours + ":" + timeCzechMinutes;
+
+  document.getElementById("mojehodiny").innerText = timeCzech;
+  document.getElementById("mojehodiny").textContent = timeCzech;
+
+  setTimeout(showTimeCzech, 1000);
+}
+
+function showTimeTokyo() {
+  var date = new Date();
+  date.setMinutes(date.getMinutes() + 540);
+
+  var timeTokyoMinutes = date.getUTCMinutes();
+  var timeTokyoHours = date.getUTCHours();
+
+  timeTokyoMinutes = (timeTokyoMinutes < 10) ? "0" + timeTokyoMinutes : timeTokyoMinutes;
+  timeTokyoHours = (timeTokyoHours < 10) ? "0" + timeTokyoHours : timeTokyoHours;
+
+  var timeTokyo = timeTokyoHours + ":" + timeTokyoMinutes;
+
+  document.getElementById("tokyo").innerText = timeTokyo;
+  document.getElementById("tokyo").textContent = timeTokyo;
+
+  setTimeout(showTimeTokyo, 1000);
+}
+
+function showTimeUSA() {
+  var date = new Date();
+  date.setMinutes(date.getMinutes() - 240);
+
+  var timeUSAMinutes = date.getUTCMinutes();
+  var timeUSAHours = date.getUTCHours();
+
+  timeUSAMinutes = (timeUSAMinutes < 10) ? "0" + timeUSAMinutes : timeUSAMinutes;
+  timeUSAHours = (timeUSAHours < 10) ? "0" + timeUSAHours : timeUSAHours;
+
+  var timeUSA = timeUSAHours + ":" + timeUSAMinutes;
+
+  document.getElementById("usa").innerText = timeUSA;
+  document.getElementById("usa").textContent = timeUSA;
+
+  setTimeout(showTimeUSA, 1000);
+}
+
+function showTimeLondon() {
+  var date = new Date();
+  date.setMinutes(date.getMinutes() + 180);
+
+  var timeLondonMinutes = date.getUTCMinutes();
+  var timeLondonHours = date.getUTCHours();
+
+  timeLondonMinutes = (timeLondonMinutes < 10) ? "0" + timeLondonMinutes : timeLondonMinutes;
+  timeLondonHours = (timeLondonHours < 10) ? "0" + timeLondonHours : timeLondonHours;
+
+  var timeLondon = timeLondonHours + ":" + timeLondonMinutes;
+
+  document.getElementById("londyn").innerText = timeLondon;
+  document.getElementById("londyn").textContent = timeLondon;
+
+  setTimeout(showTimeLondon, 1000);
+}
 showTime();
+showTimeCzech();
+showTimeTokyo();
+showTimeUSA();
+showTimeLondon();
