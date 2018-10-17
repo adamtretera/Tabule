@@ -6,8 +6,8 @@ function showTime() {
 
   //h = (h < 10) ? "0" + h : h;
 
-  document.getElementById("utc").innerText = timeUTC;
-  document.getElementById("utc").textContent = timeUTC;
+  document.getElementById("hodinyUTC").innerText = timeUTC;
+  document.getElementById("hodinyUTC").textContent = timeUTC;
 
   setTimeout(showTime, 1000);
 }
@@ -42,8 +42,8 @@ function showTimeTokyo() {
 
   var timeTokyo = timeTokyoHours + ":" + timeTokyoMinutes;
 
-  document.getElementById("tokyo").innerText = timeTokyo;
-  document.getElementById("tokyo").textContent = timeTokyo;
+  document.getElementById("hodinyT").innerText = timeTokyo;
+  document.getElementById("hodinyT").textContent = timeTokyo;
 
   setTimeout(showTimeTokyo, 1000);
 }
@@ -60,8 +60,8 @@ function showTimeUSA() {
 
   var timeUSA = timeUSAHours + ":" + timeUSAMinutes;
 
-  document.getElementById("usa").innerText = timeUSA;
-  document.getElementById("usa").textContent = timeUSA;
+  document.getElementById("hodinyA").innerText = timeUSA;
+  document.getElementById("hodinyA").textContent = timeUSA;
 
   setTimeout(showTimeUSA, 1000);
 }
@@ -78,8 +78,8 @@ function showTimeLondon() {
 
   var timeLondon = timeLondonHours + ":" + timeLondonMinutes;
 
-  document.getElementById("londyn").innerText = timeLondon;
-  document.getElementById("londyn").textContent = timeLondon;
+  document.getElementById("hodinyL").innerText = timeLondon;
+  document.getElementById("hodinyL").textContent = timeLondon;
 
   setTimeout(showTimeLondon, 1000);
 }
