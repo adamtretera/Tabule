@@ -1,3 +1,19 @@
+var mainText = document.getElementById("mainText");
+var submitBtn = document.getElementById("submitBtn");
+submitClick();
+function submitClick(){
+
+  var firebaseRef = firebase.database().ref();
+
+
+
+firebaseRef.child("text").set("someText");
+
+
+}
+
+
+
 function showTime() {
   var date = new Date();
   var timeUTCMinutes = date.getUTCMinutes();
