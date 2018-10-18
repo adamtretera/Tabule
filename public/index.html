@@ -3,12 +3,26 @@
 <html lang="cz">
 
 <head>
+    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    // TODO: Replace with your project's customized code snippet
+    var config = {
+      apiKey: "<API_KEY>",
+      authDomain: "<PROJECT_ID>.firebaseapp.com",
+      databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+      projectId: "<PROJECT_ID>",
+      storageBucket: "<BUCKET>.appspot.com",
+      messagingSenderId: "<SENDER_ID>",
+    };
+    firebase.initializeApp(config);
+  </script>
+
   <title>Tabule</title>
   <meta charset=“utf-8” />
+  <meta name="viewport" content="width=device-width", initial-scale=1;>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-
-
 </head>
 <title>
   EduTabule
@@ -16,24 +30,64 @@
 
 
 <body>
-
   <header>
-      <div id="mojehodiny" class="clock"></div>
+    <div id="tokyo" class="timeSide">
+      <p class="timeText">Tokyo</p>
+      <div id="hodinyT" class="clockT"></div>
+      <script src="js/script.js"></script>
+    </div>
+
+    <div id="utc" class="timeSide">
+      <p class="timeText">UTC</p>
+      <div id="hodinyUTC" class="clockUTC"></div>
+      <script src="js/script.js"></script>
+    </div>
+
+    <div id="mojehodiny" class="clock"></div>
+    <script src="js/script.js"></script>
+
+    <div id="usa" class="timeSide">
+      <p class="timeText">New York</p>
+      <div id="hodinyA" class="clockA"></div>
+      <script src="js/script.js"></script>
+    </div>
+
+    <div id="londyn" class="timeSide">
+      <p class="timeText">Londýn</p>
+      <div id="hodinyL" class="clockL"></div>
       <script src="js/script.js"></script>
     </div>
   </header>
-  <aside class="left">
-    <p>Left</p>
-  </aside>
-  <aside class="right">
-    <p>Right</p>
-  </aside>
-  <section class="top">
-    <p>top</p>
-  </section>
-  <section class="bottom">
-    <p>bottom</p>
-  </section>
+  <main>
+
+    <div class="row">
+      <aside class="side">
+        <p>Left Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </aside>
+      <main class="main">
+          <section class="top">
+            <div id="countdownID" class="countdown"></div>
+            <script src="js/script.js"></script>
+          </section>
+        <section class="bottom"> </section>
+      </main>
+      <aside class="side">
+        <p>Right Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </aside>
+   </div>
+<footer>
+  <a href="https://github.com/Grixi"><img class="icon" src="img/lol.png"></a>
+  <a href="https://github.com/PeanutButte7"><img class="icon" src="img/pb.jpg"></a>
+
+</footer>
+
+
+
+
+
+
+
+
 </body>
 
 </html>
