@@ -38,7 +38,6 @@ function showTimeTokyo() {
   var timeTokyoHours = date.getUTCHours();
 
   timeTokyoMinutes = (timeTokyoMinutes < 10) ? "0" + timeTokyoMinutes : timeTokyoMinutes;
-  timeTokyoHours = (timeTokyoHours < 10) ? "0" + timeTokyoHours : timeTokyoHours;
 
   var timeTokyo = timeTokyoHours + ":" + timeTokyoMinutes;
 
@@ -56,7 +55,6 @@ function showTimeUSA() {
   var timeUSAHours = date.getUTCHours();
 
   timeUSAMinutes = (timeUSAMinutes < 10) ? "0" + timeUSAMinutes : timeUSAMinutes;
-  timeUSAHours = (timeUSAHours < 10) ? "0" + timeUSAHours : timeUSAHours;
 
   var timeUSA = timeUSAHours + ":" + timeUSAMinutes;
 
@@ -74,7 +72,6 @@ function showTimeLondon() {
   var timeLondonHours = date.getUTCHours();
 
   timeLondonMinutes = (timeLondonMinutes < 10) ? "0" + timeLondonMinutes : timeLondonMinutes;
-  timeLondonHours = (timeLondonHours < 10) ? "0" + timeLondonHours : timeLondonHours;
 
   var timeLondon = timeLondonHours + ":" + timeLondonMinutes;
 
@@ -83,8 +80,29 @@ function showTimeLondon() {
 
   setTimeout(showTimeLondon, 1000);
 }
+
+function countdown() {
+  var date = new Date();
+  date.setMinutes(date.getMinutes() + 120);
+
+  var timeCzechMinutes = date.getUTCMinutes();
+  var timeCzechHours = date.getUTCHours();
+
+  timeCzechMinutes = (timeCzechMinutes < 10) ? "0" + timeCzechMinutes : timeCzechMinutes;
+  timeCzechHours = (timeCzechHours < 10) ? "0" + timeCzechHours : timeCzechHours;
+
+  var timeCzech = timeCzechHours + ":" + timeCzechMinutes;
+
+  document.getElementById("countdownID").innerText = timeCzech;
+  document.getElementById("countdownID").textContent = timeCzech;
+
+  setTimeout(countdown, 1000);
+}
+
+
 showTime();
 showTimeCzech();
 showTimeTokyo();
 showTimeUSA();
 showTimeLondon();
+countdown();
