@@ -86,12 +86,14 @@ var x = setInterval(function() {
 
   var hToday = date.getHours();
   var minToday = date.getMinutes();
+  var secToday = date.getSeconds();
 
+  var secRemaining = 59 - secToday;
   var timeNow = (hToday * 60) + minToday;
-  var countdown = 1200 - timeNow ;
+  var countdown = 1260 - timeNow;
 
-  document.getElementById("countdownID").innerText = countdown;
-  document.getElementById("countdownID").textContent = countdown;
+  document.getElementById("countdownID").innerText = countdown + ":" + secRemaining;
+  document.getElementById("countdownID").textContent = countdown + ":" + secRemaining;
 }, 1000);
 
 
