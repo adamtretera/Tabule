@@ -81,27 +81,17 @@ function showTimeLondon() {
   setTimeout(showTimeLondon, 1000);
 }
 
-//Sets deadline
-var deadline = new Date("Jan 5, 2019 15:37:25").getTime();
-
 var x = setInterval(function() {
-  var now = new Date().getTime(); //Date now
-  var t = deadline - now; //Time remaining
+  var date = new Date();
 
-  //Rounds the values and splits them
-  var days = Math.floor(t / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
-  var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((t % (1000 * 60)) / 1000);
+  var hToday = date.getHours();
+  var minToday = date.getMinutes();
 
-  //Output
-  document.getElementById("countdownID").innerHTML = days + "d "+ hours + "h " + minutes + "m " + seconds + "s ";
+  var timeNow = (hToday * 60) + minToday;
+  var countdown = 1200 - timeNow ;
 
-  //What happens when the timer ends
-  if (t < 0) {
-      clearInterval(x);
-      document.getElementById("countdownID").innerHTML = "EXPIRED";
-  }
+  document.getElementById("countdownID").innerText = countdown;
+  document.getElementById("countdownID").textContent = countdown;
 }, 1000);
 
 
@@ -111,4 +101,3 @@ showTimeCzech();
 showTimeTokyo();
 showTimeUSA();
 showTimeLondon();
-countdown();
