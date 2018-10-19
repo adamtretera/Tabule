@@ -104,14 +104,17 @@ var x = setInterval(function() {
   var minToday = date.getMinutes();
   var secToday = date.getSeconds();
 
-<<<<<<< HEAD
   var secRemaining = 59 - secToday; //Seconds remaining
   var timeNow = (hToday * 60) + minToday; //Minutes from start of the day
 
   if (timeNow <= 480){  //8:00 ZACATEK SKOLY
     var countdown = 480 - timeNow;
+    document.getElementById("countdownIDText").innerText = "Čas do začátku školy";
+    document.getElementById("countdownIDText").textContent = "Čas do začátku školy";
   } else if (timeNow <= 525) { //8:45
     var countdown = 525 - timeNow;
+    document.getElementById("countdownIDText").innerText = "Čas do konce hodiny";
+    document.getElementById("countdownIDText").textContent = "Čas do konce hodiny";
   } else if (timeNow <= 535 ) { //8:55
     var countdown = 535 - timeNow;
     document.getElementById("countdownIDText").innerText = "Čas do konce přestávky";
@@ -205,11 +208,6 @@ var x = setInterval(function() {
   }
 
   secRemaining = (secRemaining < 10) ? "0" + secRemaining : secRemaining;
-=======
-  var secRemaining = 59 - secToday;
-  var timeNow = (hToday * 60) + minToday;
-  var countdown = 1260 - timeNow;
->>>>>>> 7ac384be989b247f0701285004c784514e7401f8
 
   document.getElementById("countdownID").innerText = countdown + ":" + secRemaining;
   document.getElementById("countdownID").textContent = countdown + ":" + secRemaining;
