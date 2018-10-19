@@ -205,12 +205,16 @@ var x = setInterval(function() {
     document.getElementById("countdownIDText").textContent = "Jestli máš ještě školu tak mi je tě líto..";
   } else if (timeNow > 1110 ) { //KONEC SKOLY
     var countdown = 1920 - timeNow;
+    document.getElementById("countdownIDText").innerText = "Čas do začátku školy";
+    document.getElementById("countdownIDText").textContent = "Čas do začátku školy";
   }
 
   secRemaining = (secRemaining < 10) ? "0" + secRemaining : secRemaining;
 
-  document.getElementById("countdownID").innerText = countdown + ":" + secRemaining;
-  document.getElementById("countdownID").textContent = countdown + ":" + secRemaining;
+  countdownRight = countdown - 1; //odecte na spravny cas
+
+  document.getElementById("countdownID").innerText = countdownRight + ":" + secRemaining;
+  document.getElementById("countdownID").textContent = countdownRight + ":" + secRemaining;
 }, 1000);
 
 
