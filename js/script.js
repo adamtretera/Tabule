@@ -4,13 +4,11 @@ var submitBtn = document.getElementById("submitBtn");
 function submitClick(){
   window.alert("ahoj");
   var firebaseRef = firebase.database().ref();
-
-
-
-firebaseRef.push().set(messageText);
-
+  var firebaseRef = mainText.value();
 
 }
+
+
 
 
 
