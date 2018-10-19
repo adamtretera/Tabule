@@ -1,13 +1,13 @@
 var mainText = document.getElementById("mainText");
 var submitBtn = document.getElementById("submitBtn");
-submitClick();
-function submitClick(){
 
+function submitClick(){
+  window.alert("ahoj");
   var firebaseRef = firebase.database().ref();
 
 
 
-firebaseRef.child("text").set("someText");
+firebaseRef.push().set(messageText);
 
 
 }
@@ -104,62 +104,9 @@ var x = setInterval(function() {
   var minToday = date.getMinutes();
   var secToday = date.getSeconds();
 
-  var secRemaining = 59 - secToday; //Seconds remaining
-  var timeNow = (hToday * 60) + minToday; //Minutes from start of the day
-
-  if (timeNow <= 480){  //8:00 ZACATEK SKOLY
-    var countdown = 480 - timeNow;
-  } else if (timeNow <= 525) { //8:45
-    var countdown = 525 - timeNow;
-  } else if (timeNow <= 535 ) { //8:55
-    var countdown = 535 - timeNow;
-  } else if (timeNow <= 580) { //9:40
-    var countdown = 580 - timeNow;
-  } else if (timeNow <= 600 ) { //10:00
-    var countdown = 600 - timeNow;
-  } else if (timeNow <= 645) { //10:45
-    var countdown = 645 - timeNow;
-  } else if (timeNow <= 655 ) { //10:55
-    var countdown = 655 - timeNow;
-  } else if (timeNow <= 700) { //11:40
-    var countdown = 700 - timeNow;
-  } else if (timeNow <= 710 ) { //11:50
-    var countdown = 710 - timeNow;
-  } else if (timeNow <= 755) { //12:35
-    var countdown = 755 - timeNow;
-  } else if (timeNow <= 765 ) { //12:45
-    var countdown = 765 - timeNow;
-  } else if (timeNow <= 810) { //13:30
-    var countdown = 810 - timeNow;
-  } else if (timeNow <= 815 ) { //13:35
-    var countdown = 815 - timeNow;
-  } else if (timeNow <= 860) { //14:20
-    var countdown = 860 - timeNow;
-  } else if (timeNow <= 865 ) { //14:25
-    var countdown = 865 - timeNow;
-  } else if (timeNow <= 910) { //15:10
-    var countdown = 910 - timeNow;
-  } else if (timeNow <= 915 ) { //15:15
-    var countdown = 915 - timeNow;
-  } else if (timeNow <= 960) { //16:00
-    var countdown = 960 - timeNow;
-  } else if (timeNow <= 965 ) { //16:05
-    var countdown = 965 - timeNow;
-  } else if (timeNow <= 1010) { //16:50
-    var countdown = 1010 - timeNow;
-  } else if (timeNow <= 1015 ) { //16:55
-    var countdown = 1015 - timeNow;
-  } else if (timeNow <= 1060) { //17:40
-    var countdown = 1060 - timeNow;
-  } else if (timeNow <= 1065 ) { //17:45
-    var countdown = 1065 - timeNow;
-  } else if (timeNow <= 1110) { //18:30
-    var countdown = 1110 - timeNow;
-  } else if (timeNow > 1110 ) { //KONEC SKOLY
-    var countdown = 1920 - timeNow;
-  }
-
-  secRemaining = (secRemaining < 10) ? "0" + secRemaining : secRemaining;
+  var secRemaining = 59 - secToday;
+  var timeNow = (hToday * 60) + minToday;
+  var countdown = 1260 - timeNow;
 
   document.getElementById("countdownID").innerText = countdown + ":" + secRemaining;
   document.getElementById("countdownID").textContent = countdown + ":" + secRemaining;
