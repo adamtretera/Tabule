@@ -11,7 +11,6 @@ function submitClick(){
 
 
 
-
 function showTime() {
   var date = new Date();
   var timeUTCMinutes = date.getUTCMinutes();
