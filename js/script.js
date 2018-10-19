@@ -1,13 +1,13 @@
 var mainText = document.getElementById("mainText");
 var submitBtn = document.getElementById("submitBtn");
-submitClick();
-function submitClick(){
 
+function submitClick(){
+  window.alert("ahoj");
   var firebaseRef = firebase.database().ref();
 
 
 
-firebaseRef.child("text").set("someText");
+firebaseRef.push().set(messageText);
 
 
 }
@@ -104,6 +104,7 @@ var x = setInterval(function() {
   var minToday = date.getMinutes();
   var secToday = date.getSeconds();
 
+<<<<<<< HEAD
   var secRemaining = 59 - secToday; //Seconds remaining
   var timeNow = (hToday * 60) + minToday; //Minutes from start of the day
 
@@ -204,6 +205,11 @@ var x = setInterval(function() {
   }
 
   secRemaining = (secRemaining < 10) ? "0" + secRemaining : secRemaining;
+=======
+  var secRemaining = 59 - secToday;
+  var timeNow = (hToday * 60) + minToday;
+  var countdown = 1260 - timeNow;
+>>>>>>> 7ac384be989b247f0701285004c784514e7401f8
 
   document.getElementById("countdownID").innerText = countdown + ":" + secRemaining;
   document.getElementById("countdownID").textContent = countdown + ":" + secRemaining;
