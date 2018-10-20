@@ -2,10 +2,9 @@ var mainText = document.getElementById("mainText");
 var submitBtn = document.getElementById("submitBtn");
 
 function submitClick(){
-  window.alert("ahoj");
+
   var firebaseRef = firebase.database().ref();
   var firebaseRef = mainText.value();
-
 }
 
 
