@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="cz">
+
+<head>
+  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA4DIFov0twwABJrW9V9NVaitMcI5WnxyI",
+      authDomain: "edutabule-937c7.firebaseapp.com",
+      databaseURL: "https://edutabule-937c7.firebaseio.com",
+      projectId: "edutabule-937c7",
+      storageBucket: "edutabule-937c7.appspot.com",
+      messagingSenderId: "961399737287"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <title>Tabule</title>
+  <meta charset=“utf-8” />
+  <meta name="viewport" content="width=device-width", initial-scale=1;>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+</head>
+<title>
+  EduTabule - Interaktiv
+</title>
+
+
+<body>
+  <nav>
+    <ul>
+      <li id="Menu">Menu</li><li>Autobusy</li><li>Rozvrh</li><li>Učitelé</li>
+    </ul>
+  </nav>
+  <div class="row">
+    <section class="time">
+      <div id="countdownIDText" class="countdownText"></div>
+      <div id="countdownID" class="countdown"></div>
+      <script src="js/script.js"></script>
+      <section class="bus">
+
+      </section>
+    </section>
+    <aside class="kalendar">
+
+    </aside>
+  </div>
+<footer>
+  <a href="https://github.com/Grixi"><img class="icon" src="img/lol.png"></a>
+  <a href="https://github.com/PeanutButte7"><img class="icon" src="img/pb.jpg"></a>
+</footer>
+
+</body>
+
+</html>
