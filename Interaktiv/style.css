@@ -1,0 +1,65 @@
+body{
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+nav{
+  margin: 0%;
+  background-color: #C96F53;
+  font-weight: 300;
+  font-size: 218%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  box-shadow: 0px 3px 20px #000000;
+}
+ul{
+  margin: 0%;
+  list-style: none;
+  padding: 0%;
+}
+li{
+  display: inline;
+  padding-right: 2.1%;
+}
+#Menu{
+  font-weight: 400;
+  font-size: 114%;
+  padding-left: 2.6%;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.time{
+  background-color: #FFD0B0;
+  flex: 60%;
+  text-align: center;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  z-index: -1;
+  box-shadow: 0px 7px 8px rgb(0, 0, 0, 0.33);
+}
+.countdown{
+  font-size: 812%;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  color: rgb(0,0,0,0.8);
+}
+.countdownText{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 312%;
+  color: rgb(0,0,0,0.44);
+}
+
+.kalendar{
+  flex: 40%;
+  background-color: black;
+  z-index: -1;
+}
+
+.bus{
+  background-color: grey;
+}
