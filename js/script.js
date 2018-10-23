@@ -220,10 +220,29 @@ request.onreadystatechange = function(){
   if (this.readyState == 4 && this.status == 200) { //pokud ma pripojeni - spusti se kod
     var work = JSON.parse(request.responseText); //prevadi vraceny JSON na string
     console.log(work.weather[0].main);
+    var mainWeather = work.weather[0].main;
+    console.log(work.weather[0].description);
+    var descriptionWeather = work.weather[0].description;
+    console.log(work.main.temp);
+    var temperature = work.main.temp;
+    console.log(work.main.humidity);
+    var humidity = work.main.humidity;
+    console.log(work.wind.speed);
+    var wind = work.main.speed;
+    console.log(work.name);
+    var city = work.name;
+  }
+
+  if (mainWeather == 'Clouds') {
+    console.log('Mraky');
+  } else if (mainWeather == 'Sun') {
+    console.log('nic');
   }
 };
 
-request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=3067696&APPID=d42d44c7725ef3262944099e86680c98', true); //adresa na kterou se ma pripojit
+
+
+request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=3067696&units=metric&APPID=d42d44c7725ef3262944099e86680c98', true); //adresa na kterou se ma pripojit
 request.send(); //odesle request
 
 showTime();

@@ -30,7 +30,9 @@ Stránka bude rozdělena na dvě části:
 
 
 WEATHER API
-API ID = &APPID=d42d44c7725ef3262944099e86680c98
+API LINK (metric units) = http://api.openweathermap.org/data/2.5/weather?id=3067696&units=metric&APPID=d42d44c7725ef3262944099e86680c98
+API KEY = &APPID=d42d44c7725ef3262944099e86680c98
+vsechny moznosti pocasi - https://openweathermap.org/weather-conditions
 
 City Prague:
  -"id": 3067696,
