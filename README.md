@@ -1,4 +1,4 @@
-#Tabule
+﻿#Tabule
 
 Funkce:
   -zobrazování času
@@ -27,3 +27,21 @@ Stránka bude rozdělena na dvě části:
   2. Vytoření části MIN
     1)Převedení MAX do interaktivního rozhraní
     2)Přidávání dalších elementů
+
+
+WEATHER API
+API ID = &APPID=d42d44c7725ef3262944099e86680c98
+
+City Prague:
+ -"id": 3067696,
+
+ -"name": "Prague",
+
+ -"country": "CZ",
+
+ -"coord": {
+
+   "lon": 14.42076,
+
+   "lat": 50.088039
+    }

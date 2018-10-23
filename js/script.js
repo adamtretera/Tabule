@@ -214,7 +214,17 @@ var x = setInterval(function() {
   document.getElementById("countdownID").textContent = countdownRight + ":" + secRemaining;
 }, 1000);
 
+var request = new XMLHttpRequest(); //vytvori novy request
 
+request.onreadystatechange = function(){
+  if (this.readyState == 4 && this.status == 200) { //pokud ma pripojeni - spusti se kod
+    var work = JSON.parse(request.responseText); //prevadi vraceny JSON na string
+    console.log(work.weather[0].main);
+  }
+};
+
+request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=3067696&APPID=d42d44c7725ef3262944099e86680c98', true); //adresa na kterou se ma pripojit
+request.send(); //odesle request
 
 showTime();
 showTimeCzech();
