@@ -63,26 +63,48 @@ function repeatDaily(){
     if (this.readyState == 4 && this.status == 200) { //pokud ma pripojeni - spusti se kod
       var work = JSON.parse(daily.responseText); //prevadi vraceny JSON na string
       //var day1h9Icon = work.list[0].weather[0].icon; //day1 = den 1, h9 = hodina 9:00 (přiklad h12 = 12:00, h0 = 00:00)
+
+      var date = new Date();
+      var hoursNow = date.getHours();
+
       console.log("|||||||||||||||||||||||||");
-      console.log(work.list[0].dt_txt);
-      console.log(work.list[0].weather[0].icon);
-      console.log(work.list[0].main.temp);
+      var time0 = work.list[0].dt_txt;
+      h0 = moment(time0).format('HH');
+      console.log(hoursNow + ' hoursNow');
+      console.log(h0 + ' hoursMoment');
+      if (h0 > hoursNow) {
+        console.log(work.list[0].weather[0].icon);
+        console.log(work.list[0].main.temp);
+      } else {  }
 
-      console.log(work.list[1].dt_txt);
-      console.log(work.list[1].weather[0].icon);
-      console.log(work.list[1].main.temp);
 
-      console.log(work.list[2].dt_txt);
-      console.log(work.list[2].weather[0].icon);
-      console.log(work.list[2].main.temp);
+      var time1 = work.list[1].dt_txt;
+      h1 = moment(time1).format('HH');
+      console.log(h1 + ' hoursMoment');
 
-      console.log(work.list[3].dt_txt);
-      console.log(work.list[3].weather[0].icon);
-      console.log(work.list[3].main.temp);
+      var time2 = work.list[2].dt_txt;
+      h2 = moment(time2).format('HH');
+      console.log(h2 + ' hoursMoment');
 
-      console.log(work.list[4].dt_txt);
-      console.log(work.list[4].weather[0].icon);
-      console.log(work.list[4].main.temp);
+      var time3 = work.list[3].dt_txt;
+      h3 = moment(time3).format('HH');
+      console.log(h3 + ' hoursMoment');
+
+      var time4 = work.list[4].dt_txt;
+      h4 = moment(time4).format('HH');
+      console.log(h4 + ' hoursMoment');
+
+      var time5 = work.list[5].dt_txt;
+      h5 = moment(time5).format('HH');
+      console.log(h5 + ' hoursMoment');
+
+      var time6 = work.list[6].dt_txt;
+      h6 = moment(time6).format('HH');
+      console.log(h6 + ' hoursMoment');
+
+      var time7 = work.list[7].dt_txt;
+      h7 = moment(time7).format('HH');
+      console.log(h7 + ' hoursMoment');
       console.log("|||||||||||||||||||||||||");
     }
   };

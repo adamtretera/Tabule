@@ -79,7 +79,7 @@ footer {
 
 
 .side {
-  flex: 20%;
+  flex: 25%;
 }
 
 .icon{
@@ -89,15 +89,15 @@ footer {
 }
 
 .weather{
-}
-
-.temperature{
-  font-size: 300%;
+  font-size: 200%;
   color: #707070;
 }
 
+.temperature{
+}
+
 .main {
-  flex: 60%;
+  flex: 50%;
   background-color: #FFD0B0;
   z-index: -1;
 }
