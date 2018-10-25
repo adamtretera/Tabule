@@ -41,12 +41,11 @@ header{
   padding-left: 0.3%;
 }
 footer {
-
   position: relative;
   top: 90%;
   margin-left: 48%;
 }
-.icon {
+.iconBottom {
   width: 4%;
   border-radius: 50%;
   position: relative;
@@ -72,13 +71,29 @@ footer {
   opacity: 0.44;
 }
 
+
 .row {
   display: flex;
   flex-wrap: wrap;
 }
 
+
 .side {
   flex: 20%;
+}
+
+.icon{
+  width: 40%;
+  height: 40%;
+  padding-left: 8%;
+}
+
+.weather{
+}
+
+.temperature{
+  font-size: 300%;
+  color: #707070;
 }
 
 .main {
