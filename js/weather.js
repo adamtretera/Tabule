@@ -3,49 +3,12 @@ function repeat(){
   request.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200) { //pokud ma pripojeni - spusti se kod
       var work = JSON.parse(request.responseText); //prevadi vraceny JSON na string
-      var icon = work.weather[0].icon;
-      console.log(icon + ' ikona');
-      var temperature = work.main.temp;
-      console.log(temperature + ' teplota');
-      var humidity = work.main.humidity;
-      console.log(humidity + ' vlhkost');
-      var wind = work.wind.speed; //m/s
-      console.log(wind + ' rychlost vetru');
-      console.log('-----------------');
+
+      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/" + work.weather[0].icon + ".svg";
+      document.getElementById("temperatureID").innerHTML = work.main.temp + '°C';
+      document.getElementById("windID").innerHTML = work.wind.speed + 'm/s';
+      document.getElementById("humidityID").innerHTML = work.main.humidity + '%';
     }
-
-    if (icon == '01d') {
-      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/Clear sky.svg";
-    } else if (icon == '01n') {
-      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/Clear sky night.svg";
-    } else if (icon == '02d') {
-      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/Few clouds.svg";
-    } else if (icon == '02n') {
-      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/Few clouds night.svg";
-    } else if (icon == '03d' || icon == '03n') {
-      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/Scattered clouds.svg";
-    } else if (icon == '04d' || icon == '04n') {
-      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/Broken clouds.svg";
-    } else if (icon == '09d' || icon == '09n') {
-      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/Shower rain.svg";
-    } else if (icon == '10d' || icon == '10n') {
-      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/Rain.svg";
-    } else if (icon == '11d' || icon == '11n') {
-      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/Thunderstorm.svg";
-    } else if (icon == '13d' || icon == '13n') {
-      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/Snow.svg";
-    } else if (icon == '50d' || icon == '50n') {
-      document.getElementById("iconID").src = "Icons/Weather Icons/SVG/Mist.svg";
-    }
-
-    document.getElementById("temperatureID").innerText = temperature + '°C';
-    document.getElementById("temperatureID").textContent = temperature + '°C';
-
-    document.getElementById("windID").innerText = wind + 'm/s';
-    document.getElementById("windID").textContent = wind + 'm/s';
-
-    document.getElementById("humidityID").innerText = humidity + '%';
-    document.getElementById("humidityID").textContent = humidity + '%';
   };
 
   request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=3067696&units=metric&APPID=d42d44c7725ef3262944099e86680c98', true); //adresa na kterou se ma pripojit
@@ -67,45 +30,44 @@ function repeatDaily(){
       var date = new Date();
       var hoursNow = date.getHours();
 
-      console.log("|||||||||||||||||||||||||");
-      var time0 = work.list[0].dt_txt;
-      h0 = moment(time0).format('HH');
+      console.log("----------------");
       console.log(hoursNow + ' hoursNow');
-      console.log(h0 + ' hoursMoment');
-      if (h0 > hoursNow) {
-        console.log(work.list[0].weather[0].icon);
-        console.log(work.list[0].main.temp);
-      } else {  }
 
+      document.getElementById("hours1").innerHTML = moment(work.list[1].dt_txt).format('HH') + 'h';
+      document.getElementById("iconID1").src = "Icons/Weather Icons/SVG/" + work.list[1].weather[0].icon + ".svg";
+      document.getElementById("tempID1").innerHTML = work.list[1].main.temp;
+      document.getElementById("windID1").innerHTML = work.list[1].wind.speed + 'm/s';
+      document.getElementById("humidityID1").innerHTML = work.list[1].main.humidity + '%';
 
-      var time1 = work.list[1].dt_txt;
-      h1 = moment(time1).format('HH');
-      console.log(h1 + ' hoursMoment');
+      document.getElementById("hours2").innerHTML = moment(work.list[2].dt_txt).format('HH') + 'h';
+      document.getElementById("iconID2").src = "Icons/Weather Icons/SVG/" + work.list[2].weather[0].icon + ".svg";
+      document.getElementById("tempID2").innerHTML = work.list[2].main.temp;
+      document.getElementById("windID2").innerHTML = work.list[2].wind.speed + 'm/s';
+      document.getElementById("humidityID2").innerHTML = work.list[2].main.humidity + '%';
 
-      var time2 = work.list[2].dt_txt;
-      h2 = moment(time2).format('HH');
-      console.log(h2 + ' hoursMoment');
+      document.getElementById("hours3").innerHTML = moment(work.list[3].dt_txt).format('HH') + 'h';
+      document.getElementById("iconID3").src = "Icons/Weather Icons/SVG/" + work.list[3].weather[0].icon + ".svg";
+      document.getElementById("tempID3").innerHTML = work.list[3].main.temp;
+      document.getElementById("windID3").innerHTML = work.list[3].wind.speed + 'm/s';
+      document.getElementById("humidityID3").innerHTML = work.list[3].main.humidity + '%';
 
-      var time3 = work.list[3].dt_txt;
-      h3 = moment(time3).format('HH');
-      console.log(h3 + ' hoursMoment');
+      document.getElementById("hours4").innerHTML = moment(work.list[4].dt_txt).format('HH') + 'h';
+      document.getElementById("iconID4").src = "Icons/Weather Icons/SVG/" + work.list[4].weather[0].icon + ".svg";
+      document.getElementById("tempID4").innerHTML = work.list[4].main.temp;
+      document.getElementById("windID4").innerHTML = work.list[4].wind.speed + 'm/s';
+      document.getElementById("humidityID4").innerHTML = work.list[4].main.humidity + '%';
 
-      var time4 = work.list[4].dt_txt;
-      h4 = moment(time4).format('HH');
-      console.log(h4 + ' hoursMoment');
+      document.getElementById("hours5").innerHTML = moment(work.list[5].dt_txt).format('HH') + 'h';
+      document.getElementById("iconID5").src = "Icons/Weather Icons/SVG/" + work.list[5].weather[0].icon + ".svg";
+      document.getElementById("tempID5").innerHTML = work.list[5].main.temp;
+      document.getElementById("windID5").innerHTML = work.list[5].wind.speed + 'm/s';
+      document.getElementById("humidityID5").innerHTML = work.list[5].main.humidity + '%';
 
-      var time5 = work.list[5].dt_txt;
-      h5 = moment(time5).format('HH');
-      console.log(h5 + ' hoursMoment');
-
-      var time6 = work.list[6].dt_txt;
-      h6 = moment(time6).format('HH');
-      console.log(h6 + ' hoursMoment');
-
-      var time7 = work.list[7].dt_txt;
-      h7 = moment(time7).format('HH');
-      console.log(h7 + ' hoursMoment');
-      console.log("|||||||||||||||||||||||||");
+      document.getElementById("hours6").innerHTML = moment(work.list[6].dt_txt).format('HH') + 'h';
+      document.getElementById("iconID6").src = "Icons/Weather Icons/SVG/" + work.list[6].weather[0].icon + ".svg";
+      document.getElementById("tempID6").innerHTML = work.list[6].main.temp;
+      document.getElementById("windID6").innerHTML = work.list[6].wind.speed + 'm/s';
+      document.getElementById("humidityID6").innerHTML = work.list[6].main.humidity + '%';
     }
   };
 

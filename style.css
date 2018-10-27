@@ -88,12 +88,18 @@ footer {
   padding-left: 8%;
 }
 
+.iconNext{
+  width: 20%;
+  height: 20%;
+}
+
 .weather{
   font-size: 200%;
   color: #707070;
 }
 
-.temperature{
+.weatherNext{
+  font-size: 100%;
 }
 
 .main {
