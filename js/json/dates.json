@@ -1,0 +1,103 @@
+{
+  "month10" : [
+    {
+      "id" : "00.10",
+      "header" : "Z1",
+      "perex" : "První počítač",
+      "content" : "První, komu se podařilo sestrojit fungující počítací stroj, byl německý inženýr Konrad Zuse. V roce 1934 začal pracovat na konstrukci mechanické výpočetní pomůcky a po řadě různých zdokonalení dokončil v roce 1936 základní návrh stroje pracujícího v dvojkové soustavě s aritmetikou v plovoucí čárce a programem na děrné pásce (jako nosič byl použit kinofilm). Neznalost prací Babbageho a jeho následovníků však měla za následek, že Zuse do svého projektu nezahrnul podmíněné skoky. Přes tento nedostatek však můžeme tvrdit, že roku 1938 spatřil světlo světa první počítač nazvaný Z1. Byl ještě elektromechanický s kolíčkovou pamětí na 16 čísel a byl velmi poruchový, pro praktické použití nevhodný."
+    },
+    {
+      "id" : "01.10"
+    },
+    {
+      "id" : "02.10"
+    },
+    {
+      "id" : "03.10"
+    },
+    {
+      "id" : "04.10"
+    },
+    {
+      "id" : "05.10"
+    },
+    {
+      "id" : "06.10"
+    },
+    {
+      "id" : "07.10"
+    },
+    {
+      "id" : "08.10"
+    },
+    {
+      "id" : "09.10"
+    },
+    {
+      "id" : "10.10"
+    },
+    {
+      "id" : "11.10"
+    },
+    {
+      "id" : "12.10"
+    },
+    {
+      "id" : "13.10"
+    },
+    {
+      "id" : "14.10"
+    },
+    {
+      "id" : "15.10"
+    },
+    {
+      "id" : "16.10"
+    },
+    {
+      "id" : "17.10"
+    },
+    {
+      "id" : "18.10"
+    },
+    {
+      "id" : "19.10"
+    },
+    {
+      "id" : "20.10"
+    },
+    {
+      "id" : "21.10"
+    },
+    {
+      "id" : "22.10"
+    },
+    {
+      "id" : "23.10"
+    },
+    {
+      "id" : "24.10"
+    },
+    {
+      "id" : "25.10"
+    },
+    {
+      "id" : "26.10"
+    },
+    {
+      "id" : "27.10",
+      "header" : "Vznik Československa",
+      "perex" : "Roku 1918 vznikl samostatný československý stát",
+      "content" : "Během nacistické okupace českých zemí byl statní svátek zrušen, přesto došlo na výročí vzniku Československa 28. října 1939 k rozsáhlým protestům proti nacistické okupaci Československa. Během demonstrace byli dva lidé zabiti a patnáct zraněno. Mezi mrtvými byl i student medicíny Jan Opletal, jehož pohřeb, uskutečněný 15. listopadu, se stal zamínkou pro další protesty proti okupaci, na něž Němci reagovali 17. listopadu 1939 uzavřením českých vysokých škol. Po druhé světové válce byl státní svátek slaven do roku 1951. Slavení svátku bylo obnoveno v roce 1988."
+    },
+    {
+      "id" : "28.10"
+    },
+    {
+      "id" : "29.10"
+    },
+    {
+      "id" : "30.10"
+    }
+  ]
+}

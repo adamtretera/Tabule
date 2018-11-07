@@ -27,7 +27,6 @@
   EduTabule
 </title>
 
-<script src="js/weather.js"></script>
 <script src="js/moment.js"></script>
 
 <body>
@@ -35,28 +34,23 @@
     <div id="tokyo" class="timeSide">
       <p class="timeText">Tokyo</p>
       <div id="hodinyT" class="clockT"></div>
-      <script src="js/script.js"></script>
     </div>
 
     <div id="utc" class="timeSide">
       <p class="timeText">UTC</p>
       <div id="hodinyUTC" class="clockUTC"></div>
-      <script src="js/script.js"></script>
     </div>
 
     <div id="mojehodiny" class="clock"></div>
-    <script src="js/script.js"></script>
 
     <div id="usa" class="timeSide">
       <p class="timeText">New York</p>
       <div id="hodinyA" class="clockA"></div>
-      <script src="js/script.js"></script>
     </div>
 
     <div id="londyn" class="timeSide">
       <p class="timeText">Londýn</p>
       <div id="hodinyL" class="clockL"></div>
-      <script src="js/script.js"></script>
     </div>
   </header>
   <main>
@@ -71,12 +65,17 @@
           <div class="countdownMain">
             <div id="countdownIDText" class="countdownText"></div>
             <div id="countdownID" class="countdown"></div>
-            <script src="js/script.js"></script>
           </div>
         </section>
         <section class="bottom"> </section>
       </main>
+
       <aside class="side">
+        <div class="importantDates">
+          <div id="headerID"></div>
+          <div id="perexID"></div>
+          <div id="contentID"></div>
+        </div>
         <div class="weather">
           <img id="iconID" class="icon" src="Icons/Weather Icons/SVG/01n.svg">
           <div id="temperatureID" class="temperature"></div>
@@ -134,6 +133,10 @@
       <a href="https://github.com/PeanutButte7"><img class="iconBottom" src="img/pb.jpg"></a>
 
     </footer>
+
+    <script src="js/weather.js"></script>
+    <script src="js/dates.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 
