@@ -1,0 +1,88 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE project PUBLIC "-//audacityproject-1.3.0//DTD//EN" "http://audacity.sourceforge.net/xml/audacityproject-1.3.0.dtd" >
+<project xmlns="http://audacity.sourceforge.net/xml/" projname="Tritera_data" version="1.3.0" audacityversion="2.2.2" sel0="46.6323562152" sel1="46.6323562152" vpos="0" h="45.6672356215" zoom="88.0718954248" rate="44100.0" snapto="off" selectionformat="hh:mm:ss + millisekundy" frequencyformat="Hz" bandwidthformat="Oktávy">
+	<tags>
+		<tag name="Software" value="Lavf56.40.101"/>
+	</tags>
+	<wavetrack name="Tritera" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2131246">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808c66.au" len="262144" min="-0.51556" max="0.550632" rms="0.056047"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e0808c50.au" len="262144" min="-0.871123" max="0.938256" rms="0.08316"/>
+				</waveblock>
+				<waveblock start="524288">
+					<simpleblockfile filename="e08082d5.au" len="262144" min="-0.965174" max="0.948591" rms="0.098019"/>
+				</waveblock>
+				<waveblock start="786432">
+					<simpleblockfile filename="e08087ef.au" len="262144" min="-0.92987" max="0.897791" rms="0.091286"/>
+				</waveblock>
+				<waveblock start="1048576">
+					<simpleblockfile filename="e0808445.au" len="262144" min="-0.545264" max="0.601606" rms="0.051599"/>
+				</waveblock>
+				<waveblock start="1310720">
+					<simpleblockfile filename="e0808380.au" len="262144" min="-0.77508" max="0.966419" rms="0.102027"/>
+				</waveblock>
+				<waveblock start="1572864">
+					<simpleblockfile filename="e0808baa.au" len="262144" min="-0.930799" max="1.036403" rms="0.142818"/>
+				</waveblock>
+				<waveblock start="1835008">
+					<simpleblockfile filename="e08083fd.au" len="148119" min="-0.559309" max="0.821603" rms="0.06231"/>
+				</waveblock>
+				<waveblock start="1983127">
+					<simpleblockfile filename="e0808a94.au" len="148119" min="-0.897451" max="0.929038" rms="0.119084"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Trains Subway Metro SOUND EFFECT" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="1" rate="44100" gain="0.125893" pan="0.0" colorindex="0">
+		<waveclip offset="0.00000000" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="2131246">
+				<waveblock start="0">
+					<simpleblockfile filename="e08083d8.au" len="262144" min="-0.708132" max="0.674046" rms="0.150928"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e0808e9f.au" len="262144" min="-0.788938" max="0.837422" rms="0.208111"/>
+				</waveblock>
+				<waveblock start="524288">
+					<simpleblockfile filename="e0808263.au" len="262144" min="-0.891149" max="0.873735" rms="0.217945"/>
+				</waveblock>
+				<waveblock start="786432">
+					<simpleblockfile filename="e0808cb0.au" len="262144" min="-0.852332" max="0.856957" rms="0.204466"/>
+				</waveblock>
+				<waveblock start="1048576">
+					<simpleblockfile filename="e0808f61.au" len="262144" min="-0.737443" max="0.650676" rms="0.152714"/>
+				</waveblock>
+				<waveblock start="1310720">
+					<simpleblockfile filename="e080834e.au" len="262144" min="-0.842377" max="0.839025" rms="0.16885"/>
+				</waveblock>
+				<waveblock start="1572864">
+					<simpleblockfile filename="e080891e.au" len="262144" min="-0.72518" max="0.752587" rms="0.109398"/>
+				</waveblock>
+				<waveblock start="1835008">
+					<simpleblockfile filename="e0808a2d.au" len="262144" min="-0.301039" max="0.33124" rms="0.073171"/>
+				</waveblock>
+				<waveblock start="2097152">
+					<simpleblockfile filename="e08081c6.au" len="34094" min="-0.285786" max="0.308415" rms="0.080596"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+	<wavetrack name="Sad Violin [HQ]" channel="2" linked="0" mute="0" solo="0" height="150" minimized="0" isSelected="0" rate="44100" gain="1.0" pan="0.0" colorindex="0">
+		<waveclip offset="46.87421769" colorindex="0">
+			<sequence maxsamples="262144" sampleformat="262159" numsamples="469531">
+				<waveblock start="0">
+					<simpleblockfile filename="e0808711.au" len="262144" min="-0.274265" max="0.345022" rms="0.054537"/>
+				</waveblock>
+				<waveblock start="262144">
+					<simpleblockfile filename="e0808945.au" len="207387" min="-0.27496" max="0.333312" rms="0.057809"/>
+				</waveblock>
+			</sequence>
+			<envelope numpoints="0"/>
+		</waveclip>
+	</wavetrack>
+</project>
