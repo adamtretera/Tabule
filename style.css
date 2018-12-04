@@ -3,113 +3,28 @@ body{
   margin: 0;
 }
 
-header{
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  margin: 0%;
-  /*background-image: url(img/concrete_seamless65.png);
-  background-repeat: repeat-x;*/
-  background-color: #C96F53;
-  box-shadow: 0px 3px 20px #000000;
-  white-space: nowrap;
-  font-weight: 200;
-}
-
 .clock{
-  font-size: 300%;
-  display: inline-block;
-}
-
-.timeSide{
-  color: rgba(0, 0, 0, 0.60);
-  font-size: 150%;
-  margin: 0%;
-  line-height: 90%;
-  display: inline;
-  display: inline-block;
-  padding-right: 0.3%;
-}
-
-.timeText{
-  font-size: 60%;
-  margin: 0%;
-  color: rgba(0, 0, 0, 0.50);
-  font-weight: 400;
-}
-
-#usa{
-  padding-left: 0.3%;
-}
-footer {
-  position: relative;
-  top: 90%;
-  margin-left: 48%;
-}
-.iconBottom {
-  width: 4%;
-  border-radius: 50%;
-  position: relative;
-}
-
-.countdownMain{
-  margin-top: 10%;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  font-size: 300%;
-}
-
-.countdown{
-  font-family: 'Oswald', sans-serif;
-  font-size: 150%;
-  font-weight: 300;
-  opacity: 0.56;
+  padding-right: 20px;
+  font-size: 200%;
 }
 
 .countdownText{
-  font-weight: 300;
-  color: black;
-  opacity: 0.44;
-}
-
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-
-.side {
-  flex: 25%;
-}
-
-.icon{
-  width: 40%;
-  height: 40%;
-  padding-left: 8%;
-}
-
-.iconNext{
-  width: 20%;
-  height: 20%;
-}
-
-.weather{
   font-size: 200%;
-  color: #707070;
+}
+.countdown{
+  font-size: 400%;
 }
 
-.weatherNext{
-  font-size: 100%;
+/*POCASI - KARTY*/
+img{
+  height: 80px;
 }
-
-.main {
-  flex: 50%;
-  background-color: #FFD0B0;
-  z-index: -1;
+.weather-parameters {
+  display: inline-block;
 }
-@media screen and (max-width: 700px){
-  .row ,.main{
-    flex-direction: column;
-  }
+.weather-parameters-humidity{
 
+}
+.weather-parameters-wind{
+  padding-right: 40px;
 }
