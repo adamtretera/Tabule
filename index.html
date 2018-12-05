@@ -23,8 +23,8 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
@@ -38,7 +38,7 @@
           <div id="tokyo" class="timeSide">
             <div id="hodinyT" class="clock"></div>
           </div>
-          </li>
+        </li>
         <li>
           <div id="utc" class="timeSide">
             <div id="hodinyUTC" class="clock"></div>
@@ -60,195 +60,96 @@
 
   <main>
     <div class="row">
-    <div class="col s6">
-      <div class="card-panel teal">
-        <span class="white-text">
-          <div id="countdownIDText" class="countdownText"></div>
-          <div id="countdownID" class="countdown"></div>
-        </span>
+      <div class="col s6">
+        <div class="card-panel teal">
+          <span class="white-text">
+            <div id="countdownIDText" class="countdownText"></div>
+            <div id="countdownID" class="countdown"></div>
+          </span>
+        </div>
       </div>
-    </div>
-    <!-- ROW 1! -->
-    <div class="col s2">
-      <!--CARD 1 ROW 1!-->
-      <div class="card sticky-action">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img id="iconID" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Počasí teď<i class="material-icons right">more_vert</i></span>
-          <div id="temperatureID"></div>
-        </div>
-        <div class="card-action">
-          <div class="center-align">
-          <div class="weather-parameters"><div id="windID" class="weather-parameters-wind"></div></div><div class="weather-parameters"><div id="humidityID" class="weather-parameters-humidity"></div></div>
+      <!-- ROW 1! -->
+      <div class="col s2">
+        <!--CARD 1 ROW 1!-->
+        <div class="card sticky-action">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img id="iconID" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Počasí teď<i class="material-icons right">more_vert</i></span>
+            <div id="temperatureID"></div>
+          </div>
+          <div class="card-action">
+            <div class="center-align">
+              <div class="weather-parameters">
+                <div id="windID" class="weather-parameters-wind"></div>
+              </div>
+              <div class="weather-parameters">
+                <div id="humidityID" class="weather-parameters-humidity"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
           </div>
         </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
       </div>
-    </div>
-    <!--CARD 2 ROW 1 !-->
-    <div class="col s2">
-      <div class="card sticky-action">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img id="iconID1" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4"><div id="hours1"></div><i class="material-icons right">more_vert</i></span>
-          <div id="tempID1"></div>
-        </div>
-        <div class="card-action">
-          <div class="center-align">
-          <div class="weather-parameters"><div id="windID1" class="weather-parameters-wind"></div></div><div class="weather-parameters"><div id="humidityID1" class="weather-parameters-humidity"></div></div>
+      <!--CARD 2 ROW 1 !-->
+      <div class="col s2">
+        <div class="card sticky-action">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img id="iconID1" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><div id="hours1"></div><i class="material-icons right">more_vert</i></span>
+            <div id="tempID1"></div>
+          </div>
+          <div class="card-action">
+            <div class="center-align">
+              <div class="weather-parameters">
+                <div id="windID1" class="weather-parameters-wind"></div>
+              </div>
+              <div class="weather-parameters">
+                <div id="humidityID1" class="weather-parameters-humidity"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
           </div>
         </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
       </div>
-    </div>
-    <!--CARD 3 ROW 1 !-->
-    <div class="col s2">
-      <div class="card sticky-action">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img id="iconID2" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4"><div id="hours2"></div><i class="material-icons right">more_vert</i></span>
-          <div id="tempID2"></div>
-        </div>
-        <div class="card-action">
-          <div class="center-align">
-          <div class="weather-parameters"><div id="windID2" class="weather-parameters-wind"></div></div><div class="weather-parameters"><div id="humidityID3" class="weather-parameters-humidity"></div></div>
+      <!--CARD 3 ROW 1 !-->
+      <div class="col s2">
+        <div class="card sticky-action">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img id="iconID2" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
           </div>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--- ROW 2 !-->
-  <div class="row">
-    <div class="offset-s6">
-    <!--CARD 1 ROW 2 !-->
-    <div class="col s2">
-      <div class="card sticky-action">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img id="iconID3" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4"><div id="hours3"></div><i class="material-icons right">more_vert</i></span>
-          <div id="tempID3"></div>
-        </div>
-        <div class="card-action">
-          <div class="center-align">
-          <div class="weather-parameters"><div id="windID3" class="weather-parameters-wind"></div></div><div class="weather-parameters"><div id="humidityID3" class="weather-parameters-humidity"></div></div>
-          </div>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-    </div>
-  <!--CARD 2 ROW 2 !-->
-  <div class="col s2">
-    <div class="card sticky-action">
-      <div class="card-image waves-effect waves-block waves-light">
-        <img id="iconID4" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
-      </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4"><div id="hours4"></div><i class="material-icons right">more_vert</i></span>
-        <div id="tempID4"></div>
-      </div>
-      <div class="card-action">
-        <div class="center-align">
-        <div class="weather-parameters"><div id="windID4" class="weather-parameters-wind"></div></div><div class="weather-parameters"><div id="humidityID3" class="weather-parameters-humidity"></div></div>
-        </div>
-      </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
-        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-      </div>
-    </div>
-  </div>
-<!--CARD 1 ROW 2 !-->
-<div class="col s2">
-  <div class="card sticky-action">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img id="iconID3" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
-    </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4"><div id="hours3"></div><i class="material-icons right">more_vert</i></span>
-      <div id="tempID3"></div>
-    </div>
-    <div class="card-action">
-      <div class="center-align">
-      <div class="weather-parameters"><div id="windID3" class="weather-parameters-wind"></div></div><div class="weather-parameters"><div id="humidityID3" class="weather-parameters-humidity"></div></div>
-      </div>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-
-      <aside class="side">
-        <div class="importantDates">
-          <div id="headerID"></div>
-          <div id="perexID"></div>
-          <div id="contentID"></div>
-        </div>
-        <div class="weatherNext">
-
-          <div class="weatherNextEach">
-            <div id="hours2"></div>
-            <img id="iconID2" class="iconNext" src="Icons/Weather Icons/SVG/01n.svg">
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">
+              <div id="hours2"></div><i class="material-icons right">more_vert</i>
+            </span>
             <div id="tempID2"></div>
-            <div id="windID2"></div>
-            <div id="humidityID2"></div>
           </div>
-          <div class="weatherNextEach">
-            <div id="hours3"></div>
-            <img id="iconID3" class="iconNext" src="Icons/Weather Icons/SVG/01n.svg">
-            <div id="tempID3"></div>
-            <div id="windID3"></div>
-            <div id="humidityID3"></div>
+          <div class="card-action">
+            <div class="center-align">
+              <div class="weather-parameters">
+                <div id="windID2" class="weather-parameters-wind"></div>
+              </div>
+              <div class="weather-parameters">
+                <div id="humidityID2" class="weather-parameters-humidity"></div>
+              </div>
+            </div>
           </div>
-          <div class="weatherNextEach">
-            <div id="hours4"></div>
-            <img id="iconID4" class="iconNext" src="Icons/Weather Icons/SVG/01n.svg">
-            <div id="tempID4"></div>
-            <div id="windID4"></div>
-            <div id="humidityID4"></div>
-          </div>
-          <div class="weatherNextEach">
-            <div id="hours5"></div>
-            <img id="iconID5" class="iconNext" src="Icons/Weather Icons/SVG/01n.svg">
-            <div id="tempID5"></div>
-            <div id="windID5"></div>
-            <div id="humidityID5"></div>
-          </div>
-          <div class="weatherNextEach">
-            <div id="hours6"></div>
-            <img id="iconID6" class="iconNext" src="Icons/Weather Icons/SVG/01n.svg">
-            <div id="tempID6"></div>
-            <div id="windID6"></div>
-            <div id="humidityID6"></div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
           </div>
         </div>
-      </aside>
+      </div>
     </div>
-
     <script src="js/moment.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/dates.js"></script>
