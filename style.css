@@ -17,7 +17,8 @@ body{
 
 /*POCASI - KARTY*/
 img{
-  height: 80px;
+  padding-top: 20px;
+  height: 120px;
 }
 .weather-parameters {
   display: inline-block;
@@ -26,5 +27,5 @@ img{
 
 }
 .weather-parameters-wind{
-  padding-right: 40px;
+  padding-right: 20px;
 }
