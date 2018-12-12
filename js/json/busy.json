@@ -1,5 +1,5 @@
 {
-  "smerchodov" : [
+  "tyden_SmerChodov" : [
       {
         "cas" : "00:16",
         "cislo" : 197
@@ -224,13 +224,6 @@
       {
         "cas" : "14:57",
         "cislo" : 154
-      },
-
-
-
-
-
-
-
+      }
   ]
 }
