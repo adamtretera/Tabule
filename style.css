@@ -23,9 +23,16 @@ img{
 .weather-parameters {
   display: inline-block;
 }
-.weather-parameters-humidity{
-
-}
 .weather-parameters-wind{
   padding-right: 20px;
+}
+
+.font30px{
+  font-size: 30px;
+}
+.font25px{
+  font-size: 25px;
+}
+.textSpacing{
+  letter-spacing: 1px;
 }

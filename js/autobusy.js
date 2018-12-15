@@ -7,25 +7,37 @@ function bus() {
       var date = new Date();
       var dayOfTheWeek = date.getDay(); //pocita se od nuly (0-6)
       var currentTime = date.getHours() + ":" + date.getMinutes();
-      var checkTime = "work.tyden_SmerChodovZNaJelenach[0].cas";
+      var checkTimeChodov = "work.tyden_SmerChodovZNaJelenach[0].cas";
+      var checkTimeNaJelenach = "work.tyden_SmerNaJelenachZChodov[0].cas";
       var partOfWeek = "tyden";
-      console.log(dayOfTheWeek);
 
+      //MUSI SE DOPSAT DNY AZ BUDOU V JASONu
       if(dayOfTheWeek <= 5){
         partOfWeek = "tyden";
       } else if(dayOfTheWeek == 6) {
-        partOfWeek = "sobota";
+        partOfWeek = "tyden";
       } else {
-        partOfWeek = "nedele";
+        partOfWeek = "tyden";
+      }
+      //SMER CHODOV
+      for(var i = 0; currentTime > eval(checkTimeChodov); i++){
+        checkTimeChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cas";
+        if(eval(checkTimeChodov) >= currentTime){
+          var firstBusChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cas";
+          var firstBusNumberChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cislo";
+          document.getElementById("firstBusChodov").innerText = eval(firstBusChodov);
+          document.getElementById("firstBusNumberChodov").innerText = eval(firstBusNumberChodov);
+        }
       }
 
-      for(var i = 0; currentTime > eval(checkTime); i++){
-        checkTime = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cas";
-        if(eval(checkTime) >= currentTime){
-          var firstBus = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cas";
-          var firstBusNumber = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cislo";
-          console.log("Nejblizsi autobus " + eval(firstBus));
-          console.log("Cislo autobusu " + eval(firstBusNumber));
+      //SMER NAJELENACH
+      for(var y = 0; currentTime > eval(checkTimeNaJelenach); y++){
+        checkTimeNaJelenach = "work." + partOfWeek + "_SmerNaJelenachZChodov[" + y + "].cas";
+        if(eval(checkTimeNaJelenach) >= currentTime){
+          var firstBusNaJelenach = "work." + partOfWeek + "_SmerNaJelenachZChodov[" + y + "].cas";
+          var firstBusNumberNaJelenach = "work." + partOfWeek + "_SmerNaJelenachZChodov[" + y + "].cislo";
+          console.log("Nejblizsi autobus smer NaJelenach " + eval(firstBusNaJelenach));
+          console.log("Cislo autobusu smer NaJelenach " + eval(firstBusNumberNaJelenach));
         }
       }
     }
