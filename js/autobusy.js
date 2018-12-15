@@ -7,38 +7,25 @@ function bus() {
       var date = new Date();
       var dayOfTheWeek = date.getDay(); //pocita se od nuly (0-6)
       var currentTime = date.getHours() + ":" + date.getMinutes();
+      var checkTime = "work.tyden_SmerChodovZNaJelenach[0].cas";
+      var partOfWeek = "tyden";
+      console.log(dayOfTheWeek);
 
-      if(dayOfTheWeek <= 4){ //TYDEN
-        var checkTime = "work.tyden_SmerChodov[0].cas";
+      if(dayOfTheWeek <= 5){
+        partOfWeek = "tyden";
+      } else if(dayOfTheWeek == 6) {
+        partOfWeek = "sobota";
+      } else {
+        partOfWeek = "nedele";
+      }
 
-        for(var i = 0; currentTime > eval(checkTime); i++){
-          checkTime = "work.tyden_SmerChodov[" + i + "].cas";
-          if(eval(checkTime) >= currentTime){
-            var firstBus = "work.tyden_SmerChodov[" + i + "].cas";
-            var firstBusNumber = "work.tyden_SmerChodov[" + i + "].cislo";
-            console.log("Nejblizsi autobus " + eval(firstBus));
-            console.log("Cislo autobusu " + eval(firstBusNumber));
-          }
-        }
-      } else if(dayOfTheWeek == 5){ //SOBOTA
-        var checkTime = "work.sobota_SmerChodov[0].cas";
-
-        for(var i = 0; currentTime > eval(checkTime); i++){
-          checkTime = "work.sobota_Chodov[" + i + "].cas";
-          if(eval(checkTime) >= currentTime){
-            var firstBus = "work.sobota_SmerChodov[" + i + "].cas";
-            console.log("Nejblizsi autobus " + eval(firstBus));
-          }
-        }
-      } else if(dayOfTheWeek == 6){ //NEDELE
-        var checkTime = "work.nedele_SmerChodov[0].cas";
-
-        for(var i = 0; currentTime > eval(checkTime); i++){
-          checkTime = "work.nedele_Chodov[" + i + "].cas";
-          if(eval(checkTime) >= currentTime){
-            var firstBus = "work.nedele_SmerChodov[" + i + "].cas";
-            console.log("Nejblizsi autobus " + eval(firstBus));
-          }
+      for(var i = 0; currentTime > eval(checkTime); i++){
+        checkTime = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cas";
+        if(eval(checkTime) >= currentTime){
+          var firstBus = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cas";
+          var firstBusNumber = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cislo";
+          console.log("Nejblizsi autobus " + eval(firstBus));
+          console.log("Cislo autobusu " + eval(firstBusNumber));
         }
       }
     }
