@@ -10,6 +10,7 @@ function bus() {
       var checkTimeChodov = "work.tyden_SmerChodovZNaJelenach[0].cas";
       var checkTimeNaJelenach = "work.tyden_SmerNaJelenachZChodov[0].cas";
       var partOfWeek = "tyden";
+      console.log(currentTime);
 
       //MUSI SE DOPSAT DNY AZ BUDOU V JASONu
       if(dayOfTheWeek <= 5){
@@ -25,8 +26,18 @@ function bus() {
         if(eval(checkTimeChodov) >= currentTime){
           var firstBusChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cas";
           var firstBusNumberChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cislo";
+          var iPlus = i+1;
+          var iMinus = i-1;
+          var previousBusChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + iMinus + "].cas";
+          var previousBusNumberChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + iMinus + "].cislo";
+          var secondBusChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + iPlus + "].cas";
+          var secondBusNumberChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + iPlus + "].cislo";
+          document.getElementById("previousBusChodov").innerText = eval(previousBusChodov);
+          document.getElementById("previousBusNumberChodov").innerText = eval(previousBusNumberChodov);
           document.getElementById("firstBusChodov").innerText = eval(firstBusChodov);
           document.getElementById("firstBusNumberChodov").innerText = eval(firstBusNumberChodov);
+          document.getElementById("secondBusChodov").innerText = eval(secondBusChodov);
+          document.getElementById("secondBusNumberChodov").innerText = eval(secondBusNumberChodov);
         }
       }
 
@@ -36,8 +47,18 @@ function bus() {
         if(eval(checkTimeNaJelenach) >= currentTime){
           var firstBusNaJelenach = "work." + partOfWeek + "_SmerNaJelenachZChodov[" + y + "].cas";
           var firstBusNumberNaJelenach = "work." + partOfWeek + "_SmerNaJelenachZChodov[" + y + "].cislo";
-          console.log("Nejblizsi autobus smer NaJelenach " + eval(firstBusNaJelenach));
-          console.log("Cislo autobusu smer NaJelenach " + eval(firstBusNumberNaJelenach));
+          var yPlus = y+1;
+          var yMinus = y-1;
+          var previousBusNaJelenach = "work." + partOfWeek + "_SmerNaJelenachZChodov[" + yMinus + "].cas";
+          var previousBusNumberNaJelenach = "work." + partOfWeek + "_SmerNaJelenachZChodov[" + yMinus + "].cislo";
+          var secondBusNaJelenach = "work." + partOfWeek + "_SmerNaJelenachZChodov[" + yPlus + "].cas";
+          var secondBusNumberNaJelenach = "work." + partOfWeek + "_SmerNaJelenachZChodov[" + yPlus + "].cislo";
+          document.getElementById("previousBusNaJelenach").innerText = eval(previousBusNaJelenach);
+          document.getElementById("previousBusNumberNaJelenach").innerText = eval(previousBusNumberNaJelenach);
+          document.getElementById("firstBusNaJelenach").innerText = eval(firstBusNaJelenach);
+          document.getElementById("firstBusNumberNaJelenach").innerText = eval(firstBusNumberNaJelenach);
+          document.getElementById("secondBusNaJelenach").innerText = eval(secondBusNaJelenach);
+          document.getElementById("secondBusNumberNaJelenach").innerText = eval(secondBusNumberNaJelenach);
         }
       }
     }

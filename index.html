@@ -67,11 +67,36 @@
             <div id="countdownID" class="countdown"></div>
           </span>
         </div>
-        <div class="card-panel light-blue darken-2">
-          <span class="white-text">
+        <!-- Mobilni autobusy !-->
+        <div class="hide-on-med-and-up card">
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+              <li class="tab"><a href="#test4">Test 1</a></li>
+              <li class="tab"><a class="active" href="#test5">Test 2</a></li>
+              <li class="tab"><a href="#test6">Test 3</a></li>
+            </ul>
+          </div>
+          <div class="card-content grey lighten-4">
+            <div id="test4">Test 1</div>
+            <div id="test5">Test 2</div>
+            <div id="test6">Test 3</div>
+          </div>
+        </div>
+
+        <!-- Desktop+tablet autobusy !-->
+        <div class="hide-on-small-only card-panel light-blue darken-2">
+            <span class="white-text col s12 m6">
               <p class="font30px">Na Jelenách <i class="material-icons">arrow_forward_ios</i> Chodov</p>
-              <p class="font25px"><i class="material-icons">directions_bus</i>  <span id="firstBusNumberChodov"></span> - <span class="textSpacing" id="firstBusChodov"></span></p>
-          </span>
+              <p class="font25px light-blue-text text-lighten-3"><i class="material-icons"><span>event_busy</span></i> <span id="previousBusNumberChodov"></span> - <span class="textSpacing" id="previousBusChodov"></span></p>
+              <p class="font25px"><i class="material-icons"><span>event_available</span></i> <span class="busNumber" id="firstBusNumberChodov"></span> - <span class="textSpacing" id="firstBusChodov"></span></p>
+              <p class="font25px"><i class="material-icons"><span>event_available</span></i> <span class="busNumber" id="secondBusNumberChodov"></span> - <span class="textSpacing" id="secondBusChodov"></span></p>
+            </span>
+            <span class="white-text">
+              <p class="font30px">Chodov <i class="material-icons">arrow_forward_ios</i> Na Jelenách</p>
+              <p class="font25px light-blue-text text-lighten-3"><i class="material-icons"><span>event_busy</span></i> <span id="previousBusNumberNaJelenach"></span> - <span class="textSpacing" id="previousBusNaJelenach"></span></p>
+              <p class="font25px"><i class="material-icons"><span>event_available</span></i> <span class="busNumber" id="firstBusNumberNaJelenach"></span> - <span class="textSpacing" id="firstBusNaJelenach"></span></p>
+              <p class="font25px"><i class="material-icons"><span>event_available</span></i> <span class="busNumber" id="secondBusNumberNaJelenach"></span> - <span class="textSpacing" id="secondBusNaJelenach"></span></p>
+            </span>
         </div>
       </div>
       <div class="col s12 l6">
