@@ -10,7 +10,6 @@ function bus() {
       var checkTimeChodov = "work.tyden_SmerChodovZNaJelenach[0].cas";
       var checkTimeNaJelenach = "work.tyden_SmerNaJelenachZChodov[0].cas";
       var partOfWeek = "tyden";
-      console.log(currentTime);
 
       //MUSI SE DOPSAT DNY AZ BUDOU V JASONu
       if(dayOfTheWeek <= 5){
