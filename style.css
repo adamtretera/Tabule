@@ -42,7 +42,18 @@ img {
   letter-spacing: 1px;
 }
 
+/*AUTOBUSY*/
+.busMobil{
+  font-size: 25px;
+  padding-top: 4%;
+}
+
 .busNumber{
   font-size: 18px;
-  opacity: 0.8;
+  opacity: 0.9;
+}
+
+.casDoPrijezdu{
+  font-size: 15px;
+  margin-left: 10%;
 }

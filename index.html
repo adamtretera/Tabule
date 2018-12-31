@@ -25,7 +25,6 @@
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<!--#01579b light-blue darken-4 , #37474f blue-grey darken-3 !-->
 
 <body>
   <nav class="hide-on-med-and-down">
@@ -57,7 +56,6 @@
       </ul>
     </div>
   </nav>
-
   <main>
     <div class="row">
       <div class="col s12 l6">
@@ -68,35 +66,49 @@
           </span>
         </div>
         <!-- Mobilni autobusy !-->
-        <div class="hide-on-med-and-up card">
+        <div class="card blue darken-4 hide-on-med-and-up">
           <div class="card-tabs">
-            <ul class="tabs tabs-fixed-width">
-              <li class="tab"><a href="#test4">Test 1</a></li>
-              <li class="tab"><a class="active" href="#test5">Test 2</a></li>
-              <li class="tab"><a href="#test6">Test 3</a></li>
+            <ul class="tabs tabs-fixed-width tabs-transparent">
+              <li class="tab">
+                <a href="#chodov" class="white-text"><i class="tiny material-icons">arrow_forward_ios</i> Chodov</a>
+              </li>
+              <li class="tab">
+                <a href="#naJelenach" class="white-text"><i class="tiny material-icons">arrow_forward_ios</i> Na Jelenách</a>
+              </li>
             </ul>
           </div>
-          <div class="card-content grey lighten-4">
-            <div id="test4">Test 1</div>
-            <div id="test5">Test 2</div>
-            <div id="test6">Test 3</div>
+          <div class="card-content blue-grey lighten-5">
+            <div id="chodov">
+              <span>
+                <p class="busMobil blue-grey-text text-lighten-3"><i class="material-icons"><span class="busNumber">event_busy</span></i> <span class="busNumber previousBusNumberChodov"></span> - <span class="textSpacing previousBusChodov"></span><span class="casDoPrijezdu">Předchozí</span></p>
+                <p class="busMobil blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber firstBusNumberChodov"></span> - <span class="textSpacing firstBusChodov"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown firstBusChodovCountdownSec"></span></span></p>
+                <p class="busMobil blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber secondBusNumberChodov"></span> - <span class="textSpacing secondBusChodov"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown secondBusChodovCountdownSec"></span></span></p>
+              </span>
+            </div>
+            <div id="naJelenach">
+              <span>
+                <p class="busMobil blue-grey-text text-lighten-3"><i class="material-icons"><span class="busNumber">event_busy</span></i> <span class="busNumber previousBusNumberNaJelenach"></span> - <span class="textSpacing previousBusNaJelenach"></span><span class="casDoPrijezdu">Předchozí</span></p>
+                <p class="busMobil blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber firstBusNumberNaJelenach"></span> - <span class="textSpacing firstBusNaJelenach"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown firstBusNaJelenachCountdownSec"></span></span></p>
+                <p class="busMobil blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber secondBusNumberNaJelenach"></span> - <span class="textSpacing secondBusNaJelenach"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown secondBusNaJelenachCountdownSec"></span></span></p>
+              </span>
+            </div>
           </div>
         </div>
 
         <!-- Desktop+tablet autobusy !-->
-        <div class="hide-on-small-only card-panel light-blue darken-2">
-            <span class="white-text col s12 m6">
-              <p class="font30px">Na Jelenách <i class="material-icons">arrow_forward_ios</i> Chodov</p>
-              <p class="font25px light-blue-text text-darken-4"><i class="material-icons"><span class="busNumber">event_busy</span></i> <span class="busNumber" id="previousBusNumberChodov"></span> - <span class="textSpacing" id="previousBusChodov"></span></p>
-              <p class="font25px"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber" id="firstBusNumberChodov"></span> - <span class="textSpacing" id="firstBusChodov"></span></p>
-              <p class="font25px"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber" id="secondBusNumberChodov"></span> - <span class="textSpacing" id="secondBusChodov"></span></p>
-            </span>
-            <span class="white-text">
-              <p class="font30px">Chodov <i class="material-icons">arrow_forward_ios</i> Na Jelenách</p>
-              <p class="font25px light-blue-text text-darken-4"><i class="material-icons"><span class="busNumber">event_busy</span></i> <span class="busNumber" id="previousBusNumberNaJelenach"></span> - <span class="textSpacing" id="previousBusNaJelenach"></span></p>
-              <p class="font25px"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber" id="firstBusNumberNaJelenach"></span> - <span class="textSpacing" id="firstBusNaJelenach"></span></p>
-              <p class="font25px"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber" id="secondBusNumberNaJelenach"></span> - <span class="textSpacing" id="secondBusNaJelenach"></span></p>
-            </span>
+        <div class="col m12 hide-on-small-only card-panel blue-grey lighten-5">
+          <span class="col m6">
+            <p class="font30px blue-text text-darken-4">Na Jelenách <i class="material-icons">arrow_forward_ios</i> Chodov</p>
+            <p class="font25px blue-grey-text text-lighten-3"><i class="material-icons"><span class="busNumber">event_busy</span></i> <span class="busNumber previousBusNumberChodov"></span> - <span class="textSpacing previousBusChodov"></span><span class="casDoPrijezdu">Předchozí</span></p>
+            <p class="font25px blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber firstBusNumberChodov"></span> - <span class="textSpacing firstBusChodov"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown firstBusChodovCountdownSec"></span></span></p>
+            <p class="font25px blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber secondBusNumberChodov"></span> - <span class="textSpacing secondBusChodov"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown secondBusChodovCountdownSec"></span></span></p>
+          </span>
+          <span class="col m6">
+            <p class="font30px blue-text text-darken-4">Chodov <i class="material-icons">arrow_forward_ios</i> Na Jelenách</p>
+            <p class="font25px blue-grey-text text-lighten-3"><i class="material-icons"><span class="busNumber">event_busy</span></i> <span class="busNumber previousBusNumberNaJelenach"></span> - <span class="textSpacing previousBusNaJelenach"></span><span class="casDoPrijezdu">Předchozí</span></p>
+            <p class="font25px blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber firstBusNumberNaJelenach"></span> - <span class="textSpacing firstBusNaJelenach"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown firstBusNaJelenachCountdownSec"></span></span></p>
+            <p class="font25px blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber secondBusNumberNaJelenach"></span> - <span class="textSpacing secondBusNaJelenach"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown secondBusNaJelenachCountdownSec"></span></span></p>
+          </span>
         </div>
       </div>
       <div class="col s12 l6">
@@ -109,7 +121,7 @@
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">
-                <p>Dnes</p><i class="light-blue-text text-darken-2 material-icons right">more_vert</i>
+                <p>Dnes</p><i class="blue-grey-text text-lighten-3 material-icons right">more_vert</i>
               </span>
               <div id="temperatureID"></div>
             </div>
@@ -137,7 +149,7 @@
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">
-                <div id="hours1"></div><i class="material-icons right">more_vert</i>
+                <div id="hours1"></div><i class="material-icons right blue-grey-text text-lighten-3">more_vert</i>
               </span>
               <div id="tempID1"></div>
             </div>
@@ -165,7 +177,7 @@
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">
-                <div id="hours2"></div><i class="material-icons right">more_vert</i>
+                <div id="hours2"></div><i class="material-icons right blue-grey-text text-lighten-3">more_vert</i>
               </span>
               <div id="tempID2"></div>
             </div>
@@ -193,7 +205,7 @@
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">
-                <p>Zítra</p><i class="material-icons right">more_vert</i>
+                <p>Zítra</p><i class="material-icons right blue-grey-text text-lighten-3">more_vert</i>
               </span>
               <div id="tempID3"></div>
             </div>
@@ -221,7 +233,7 @@
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">
-                <p>Za 2 dny</p><i class="material-icons right">more_vert</i>
+                <p>Za 2 dny</p><i class="material-icons right blue-grey-text text-lighten-3">more_vert</i>
               </span>
               <div id="tempID4"></div>
             </div>
@@ -249,7 +261,7 @@
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">
-                <p>Za 3 dny</p><i class="material-icons right">more_vert</i>
+                <p>Za 3 dny</p><i class="material-icons right blue-grey-text text-lighten-3">more_vert</i>
               </span>
               <div id="tempID5"></div>
             </div>
@@ -272,7 +284,14 @@
       </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
 
+        $('.tabs').tabs();
+
+      });
+    </script>
     <script src="js/moment.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/dates.js"></script>
