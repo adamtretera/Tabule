@@ -1,82 +1,59 @@
-body{
+body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
 }
 
-header{
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  margin: 0%;
-  background-image: url(img/concrete_seamless65.png);
-  background-repeat: repeat-x;
-  white-space: nowrap;
+.clock {
+  padding-right: 20px;
+  font-size: 200%;
 }
 
-.clock{
-  font-size: 300%;
+.countdownText {
+  font-size: 200%;
+}
+
+.countdown {
+  font-size: 400%;
+}
+
+/*POCASI - KARTY*/
+img {
+  padding-top: 20px;
+  height: 120px;
+}
+
+.weather-parameters {
   display: inline-block;
 }
 
-.timeSide{
-  color: rgba(0, 0, 0, 0.52);
-  font-size: 150%;
-  margin: 0%;
-  line-height: 90%;
-  display: inline;
-  display: inline-block;
-  padding-right: 0.3%;
+.weather-parameters-wind {
+  padding-right: 20px;
 }
 
-.timeText{
-  font-size: 60%;
-  margin: 0%;
-  color: rgba(0, 0, 0, 0.25);
+.font25px {
+  font-size: 25px;
 }
 
-#usa{
-  padding-left: 0.3%;
-}
-footer {
-
-  position: relative;
-  top: 90%;
-  margin-left: 48%;
-}
-.icon {
-  width: 4%;
-  border-radius: 50%;
-  position: relative;
-
-
-
+.font30px {
+  font-size: 30px;
 }
 
-
-
-
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-
+.textSpacing {
+  letter-spacing: 1px;
 }
 
-.side {
-  flex: 20%;
-  background-color: #f1f1f1;
-
+/*AUTOBUSY*/
+.busMobil{
+  font-size: 25px;
+  padding-top: 4%;
 }
 
-
-
-.main {
-  flex: 60%;
-  background-color: white;
-
+.busNumber{
+  font-size: 18px;
+  opacity: 0.9;
 }
-@media screen and (max-width: 700px){
-  .row ,.main{
-    flex-direction: column;
-  }
 
+.casDoPrijezdu{
+  font-size: 15px;
+  margin-left: 10%;
 }

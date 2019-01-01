@@ -3,91 +3,302 @@
 <html lang="cz">
 
 <head>
-    <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
   <script>
     // Initialize Firebase
-    // TODO: Replace with your project's customized code snippet
     var config = {
-      apiKey: "<API_KEY>",
-      authDomain: "<PROJECT_ID>.firebaseapp.com",
-      databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-      projectId: "<PROJECT_ID>",
-      storageBucket: "<BUCKET>.appspot.com",
-      messagingSenderId: "<SENDER_ID>",
+      apiKey: "AIzaSyA4DIFov0twwABJrW9V9NVaitMcI5WnxyI",
+      authDomain: "edutabule-937c7.firebaseapp.com",
+      databaseURL: "https://edutabule-937c7.firebaseio.com",
+      projectId: "edutabule-937c7",
+      storageBucket: "edutabule-937c7.appspot.com",
+      messagingSenderId: "961399737287"
     };
     firebase.initializeApp(config);
   </script>
 
   <title>Tabule</title>
   <meta charset=“utf-8” />
-  <meta name="viewport" content="width=device-width", initial-scale=1;>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<title>
-  EduTabule
-</title>
-
 
 <body>
-  <header>
-    <div id="tokyo" class="timeSide">
-      <p class="timeText">Tokyo</p>
-      <div id="hodinyT" class="clockT"></div>
-      <script src="js/script.js"></script>
+  <nav class="hide-on-med-and-down">
+    <div class="nav-wrapper light-blue darken-4">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <div id="mojehodiny" class="clock"></div>
+        </li>
+        <li>
+          <div id="tokyo" class="timeSide">
+            <div id="hodinyT" class="clock"></div>
+          </div>
+        </li>
+        <li>
+          <div id="utc" class="timeSide">
+            <div id="hodinyUTC" class="clock"></div>
+          </div>
+        </li>
+        <li>
+          <div id="usa" class="timeSide">
+            <div id="hodinyA" class="clock"></div>
+          </div>
+        </li>
+        <li>
+          <div id="londyn" class="timeSide">
+            <div id="hodinyL" class="clock"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <div class="row">
+      <div class="col s12 l6">
+        <div class="card-panel blue-grey darken-3">
+          <span class="white-text">
+            <div id="countdownIDText" class="countdownText"></div>
+            <div id="countdownID" class="countdown"></div>
+          </span>
+        </div>
+        <!-- Mobilni autobusy !-->
+        <div class="card blue darken-4 hide-on-med-and-up">
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width tabs-transparent">
+              <li class="tab">
+                <a href="#chodov" class="white-text"><i class="tiny material-icons">arrow_forward_ios</i> Chodov</a>
+              </li>
+              <li class="tab">
+                <a href="#naJelenach" class="white-text"><i class="tiny material-icons">arrow_forward_ios</i> Na Jelenách</a>
+              </li>
+            </ul>
+          </div>
+          <div class="card-content blue-grey lighten-5">
+            <div id="chodov">
+              <span>
+                <p class="busMobil blue-grey-text text-lighten-3"><i class="material-icons"><span class="busNumber">event_busy</span></i> <span class="busNumber previousBusNumberChodov"></span> - <span class="textSpacing previousBusChodov"></span><span class="casDoPrijezdu">Předchozí</span></p>
+                <p class="busMobil blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber firstBusNumberChodov"></span> - <span class="textSpacing firstBusChodov"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown firstBusChodovCountdownSec"></span></span></p>
+                <p class="busMobil blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber secondBusNumberChodov"></span> - <span class="textSpacing secondBusChodov"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown secondBusChodovCountdownSec"></span></span></p>
+              </span>
+            </div>
+            <div id="naJelenach">
+              <span>
+                <p class="busMobil blue-grey-text text-lighten-3"><i class="material-icons"><span class="busNumber">event_busy</span></i> <span class="busNumber previousBusNumberNaJelenach"></span> - <span class="textSpacing previousBusNaJelenach"></span><span class="casDoPrijezdu">Předchozí</span></p>
+                <p class="busMobil blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber firstBusNumberNaJelenach"></span> - <span class="textSpacing firstBusNaJelenach"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown firstBusNaJelenachCountdownSec"></span></span></p>
+                <p class="busMobil blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber secondBusNumberNaJelenach"></span> - <span class="textSpacing secondBusNaJelenach"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown secondBusNaJelenachCountdownSec"></span></span></p>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desktop+tablet autobusy !-->
+        <div class="col m12 hide-on-small-only card-panel blue-grey lighten-5">
+          <span class="col m6">
+            <p class="font30px blue-text text-darken-4">Na Jelenách <i class="material-icons">arrow_forward_ios</i> Chodov</p>
+            <p class="font25px blue-grey-text text-lighten-3"><i class="material-icons"><span class="busNumber">event_busy</span></i> <span class="busNumber previousBusNumberChodov"></span> - <span class="textSpacing previousBusChodov"></span><span class="casDoPrijezdu">Předchozí</span></p>
+            <p class="font25px blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber firstBusNumberChodov"></span> - <span class="textSpacing firstBusChodov"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown firstBusChodovCountdownSec"></span></span></p>
+            <p class="font25px blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber secondBusNumberChodov"></span> - <span class="textSpacing secondBusChodov"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown secondBusChodovCountdownSec"></span></span></p>
+          </span>
+          <span class="col m6">
+            <p class="font30px blue-text text-darken-4">Chodov <i class="material-icons">arrow_forward_ios</i> Na Jelenách</p>
+            <p class="font25px blue-grey-text text-lighten-3"><i class="material-icons"><span class="busNumber">event_busy</span></i> <span class="busNumber previousBusNumberNaJelenach"></span> - <span class="textSpacing previousBusNaJelenach"></span><span class="casDoPrijezdu">Předchozí</span></p>
+            <p class="font25px blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber firstBusNumberNaJelenach"></span> - <span class="textSpacing firstBusNaJelenach"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown firstBusNaJelenachCountdownSec"></span></span></p>
+            <p class="font25px blue-grey-text text-darken-2"><i class="material-icons"><span class="busNumber">event_available</span></i> <span class="busNumber secondBusNumberNaJelenach"></span> - <span class="textSpacing secondBusNaJelenach"></span><span class="casDoPrijezdu">Zbývá: <span class="busCountdown secondBusNaJelenachCountdownSec"></span></span></p>
+          </span>
+        </div>
+      </div>
+      <div class="col s12 l6">
+        <!-- ROW 1! -->
+        <div class="col s6 m4">
+          <!--CARD 1 ROW 1!-->
+          <div class="card sticky-action hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img id="iconID" class="activator" src="Icons/Weather Icons/SVG/01n.svg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">
+                <p>Dnes</p><i class="blue-grey-text text-lighten-3 material-icons right">more_vert</i>
+              </span>
+              <div id="temperatureID"></div>
+            </div>
+            <div class="card-action">
+              <div class="center-align grey-text text-darken-2">
+                <div class="weather-parameters">
+                  <div id="windID" class="weather-parameters-wind"></div>
+                </div>
+                <div class="weather-parameters">
+                  <div id="humidityID" class="weather-parameters-humidity"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        <!--CARD 2 ROW 1 !-->
+        <div class="col s6 m4">
+          <div class="card sticky-action hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img id="iconID1" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">
+                <div id="hours1"></div><i class="material-icons right blue-grey-text text-lighten-3">more_vert</i>
+              </span>
+              <div id="tempID1"></div>
+            </div>
+            <div class="card-action">
+              <div class="center-align grey-text text-darken-2">
+                <div class="weather-parameters">
+                  <div id="windID1" class="weather-parameters-wind"></div>
+                </div>
+                <div class="weather-parameters">
+                  <div id="humidityID1" class="weather-parameters-humidity"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        <!--CARD 3 ROW 1 !-->
+        <div class="col s6 m4">
+          <div class="card sticky-action hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img id="iconID2" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">
+                <div id="hours2"></div><i class="material-icons right blue-grey-text text-lighten-3">more_vert</i>
+              </span>
+              <div id="tempID2"></div>
+            </div>
+            <div class="card-action">
+              <div class="center-align grey-text text-darken-2">
+                <div class="weather-parameters">
+                  <div id="windID2" class="weather-parameters-wind"></div>
+                </div>
+                <div class="weather-parameters">
+                  <div id="humidityID2" class="weather-parameters-humidity"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s6 m4">
+          <!--CARD 1 ROW 2!-->
+          <div class="card sticky-action hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img id="iconID3" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">
+                <p>Zítra</p><i class="material-icons right blue-grey-text text-lighten-3">more_vert</i>
+              </span>
+              <div id="tempID3"></div>
+            </div>
+            <div class="card-action">
+              <div class="center-align grey-text text-darken-2">
+                <div class="weather-parameters">
+                  <div id="windID3" class="weather-parameters-wind"></div>
+                </div>
+                <div class="weather-parameters">
+                  <div id="humidityID3" class="weather-parameters-humidity"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        <!--CARD 2 ROW 2 !-->
+        <div class="col s6 m4">
+          <div class="card sticky-action hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img id="iconID4" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">
+                <p>Za 2 dny</p><i class="material-icons right blue-grey-text text-lighten-3">more_vert</i>
+              </span>
+              <div id="tempID4"></div>
+            </div>
+            <div class="card-action">
+              <div class="center-align grey-text text-darken-2">
+                <div class="weather-parameters">
+                  <div id="windID4" class="weather-parameters-wind"></div>
+                </div>
+                <div class="weather-parameters">
+                  <div id="humidityID4" class="weather-parameters-humidity"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+        <!--CARD 3 ROW 2 !-->
+        <div class="col s6 m4">
+          <div class="card sticky-action hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img id="iconID5" class="activator" class="weatherIMG" src="Icons/Weather Icons/SVG/01n.svg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">
+                <p>Za 3 dny</p><i class="material-icons right blue-grey-text text-lighten-3">more_vert</i>
+              </span>
+              <div id="tempID5"></div>
+            </div>
+            <div class="card-action">
+              <div class="center-align grey-text text-darken-2">
+                <div class="weather-parameters">
+                  <div id="windID5" class="weather-parameters-wind"></div>
+                </div>
+                <div class="weather-parameters">
+                  <div id="humidityID5" class="weather-parameters-humidity"></div>
+                </div>
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Fun Fact<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div id="utc" class="timeSide">
-      <p class="timeText">UTC</p>
-      <div id="hodinyUTC" class="clockUTC"></div>
-      <script src="js/script.js"></script>
-    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(document).ready(function() {
 
-    <div id="mojehodiny" class="clock"></div>
+        $('.tabs').tabs();
+
+      });
+    </script>
+    <script src="js/moment.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/dates.js"></script>
+    <script src="js/autobusy.js"></script>
     <script src="js/script.js"></script>
 
-    <div id="usa" class="timeSide">
-      <p class="timeText">New York</p>
-      <div id="hodinyA" class="clockA"></div>
-      <script src="js/script.js"></script>
-    </div>
-
-    <div id="londyn" class="timeSide">
-      <p class="timeText">Londýn</p>
-      <div id="hodinyL" class="clockL"></div>
-      <script src="js/script.js"></script>
-    </div>
-  </header>
-  <main>
-
-    <div class="row">
-      <aside class="side">
-        <p>Left Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </aside>
-      <main class="main">
-          <section class="top">
-            <div id="countdownID" class="countdown"></div>
-            <script src="js/script.js"></script>
-          </section>
-        <section class="bottom"> </section>
-      </main>
-      <aside class="side">
-        <p>Right Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </aside>
-   </div>
-<footer>
-  <a href="https://github.com/Grixi"><img class="icon" src="img/lol.png"></a>
-  <a href="https://github.com/PeanutButte7"><img class="icon" src="img/pb.jpg"></a>
-
-</footer>
-
-
-
-
-
-
-
-
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 
 </html>
