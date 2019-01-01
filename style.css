@@ -1,6 +1,12 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
 }
 
 .clock {
@@ -56,4 +62,17 @@ img {
 .casDoPrijezdu{
   font-size: 15px;
   margin-left: 10%;
+}
+
+#AdamB{
+  padding-right: 1%;
+  border-right: 1px solid rgb(190, 190, 190);
+}
+
+#AdamT{
+  padding-left: 1%
+}
+
+#Feedback{
+  float: right;
 }
