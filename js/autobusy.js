@@ -6,7 +6,7 @@ function bus() {
 
       var date = new Date();
       var dayOfTheWeek = date.getDay(); //pocita se od nuly (0-6)
-      var currentTime = date.getHours() + ":" + date.getMinutes();
+      var currentTime = date.getHours() + ":" + (date.getMinutes());
       var checkTimeChodov = "work.tyden_SmerChodovZNaJelenach[0].cas";
       var checkTimeNaJelenach = "work.tyden_SmerNaJelenachZChodov[0].cas";
       var partOfWeek = "tyden";
@@ -25,7 +25,7 @@ function bus() {
       //SMER CHODOV
       for(var i = 0; currentTime > eval(checkTimeChodov); i++){
         checkTimeChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cas";
-        if(eval(checkTimeChodov) > currentTime){
+        if(eval(checkTimeChodov) >= currentTime){
           var firstBusChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cas";
           var firstBusNumberChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cislo";
           var iPlus = i+1;
@@ -55,9 +55,15 @@ function bus() {
           var secondBusChodovCountdown = moment.duration(moment.duration(eval(secondBusChodov), "HH:mm").subtract(currentTimeDuration)).asMinutes() - 1; //kolik zbyva casu do prijezdu (v minutach)
           var secondBusChodovCountdownSec = secondBusChodovCountdown + ":" + secRemaining; //minuty + sekundy
 
-          document.getElementsByClassName("firstBusChodovCountdownSec")[0].innerText = firstBusChodovCountdownSec;
+          //Countdown opatření aby se čísla nezobrazovaly v mínusu
+          if (parseInt(firstBusChodovCountdown, 10) < 0) {
+            document.getElementsByClassName("firstBusChodovCountdownSec")[0].innerText = "0:00";
+            document.getElementsByClassName("firstBusChodovCountdownSec")[1].innerText = "0:00";
+          } else {
+            document.getElementsByClassName("firstBusChodovCountdownSec")[0].innerText = firstBusChodovCountdownSec;
+            document.getElementsByClassName("firstBusChodovCountdownSec")[1].innerText = firstBusChodovCountdownSec;
+          }
           document.getElementsByClassName("secondBusChodovCountdownSec")[0].innerText = secondBusChodovCountdownSec;
-          document.getElementsByClassName("firstBusChodovCountdownSec")[1].innerText = firstBusChodovCountdownSec;
           document.getElementsByClassName("secondBusChodovCountdownSec")[1].innerText = secondBusChodovCountdownSec;
         }
       }
@@ -94,12 +100,17 @@ function bus() {
           var firstBusNaJelenachCountdownSec = firstBusNaJelenachCountdown + ":" + secRemaining; //minuty + sekundy
           var secondBusNaJelenachCountdown = moment.duration(moment.duration(eval(secondBusNaJelenach), "HH:mm").subtract(currentTimeDuration)).asMinutes() - 1; //kolik zbyva casu do prijezdu (v minutach)
           var secondBusNaJelenachCountdownSec = secondBusNaJelenachCountdown + ":" + secRemaining; //minuty + sekundy
-          document.getElementsByClassName("firstBusNaJelenachCountdownSec")[0].innerText = firstBusNaJelenachCountdownSec;
+
+          //Countdown opatření aby se čísla nezobrazovaly v mínusu
+          if (parseInt(firstBusNaJelenachCountdown, 10) < 0) {
+            document.getElementsByClassName("firstBusNaJelenachCountdownSec")[0].innerText = "0:00";
+            document.getElementsByClassName("firstBusNaJelenachCountdownSec")[1].innerText = "0:00";
+          } else {
+            document.getElementsByClassName("firstBusNaJelenachCountdownSec")[0].innerText = firstBusNaJelenachCountdownSec;
+            document.getElementsByClassName("firstBusNaJelenachCountdownSec")[1].innerText = firstBusNaJelenachCountdownSec;
+          }
           document.getElementsByClassName("secondBusNaJelenachCountdownSec")[0].innerText = secondBusNaJelenachCountdownSec;
-          document.getElementsByClassName("firstBusNaJelenachCountdownSec")[1].innerText = firstBusNaJelenachCountdownSec;
           document.getElementsByClassName("secondBusNaJelenachCountdownSec")[1].innerText = secondBusNaJelenachCountdownSec;
-
-
         }
       }
     }
