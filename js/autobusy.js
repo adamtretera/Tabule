@@ -6,7 +6,7 @@ function bus() {
 
       var date = new Date();
       var dayOfTheWeek = date.getDay(); //pocita se od nuly (0-6)
-      var currentTime = date.getHours() + ":" + (date.getMinutes());
+      var currentTime = date.getHours() + ":" + date.getMinutes();
       var checkTimeChodov = "work.tyden_SmerChodovZNaJelenach[0].cas";
       var checkTimeNaJelenach = "work.tyden_SmerNaJelenachZChodov[0].cas";
       var partOfWeek = "tyden";
@@ -62,6 +62,8 @@ function bus() {
           if (firstBusChodovCountdownInt < 0) {
             document.getElementsByClassName("firstBusChodovCountdownSec")[0].innerText = "0:00";
             document.getElementsByClassName("firstBusChodovCountdownSec")[1].innerText = "0:00";
+            document.getElementsByClassName("secondBusChodovCountdownSec")[0].innerText = secondBusChodovCountdownSec;
+            document.getElementsByClassName("secondBusChodovCountdownSec")[1].innerText = secondBusChodovCountdownSec;
           } else {
             if (firstBusChodovCountdownInt > 59) {
               var firstTimeChodovHours = firstBusChodovCountdownInt / 60;
@@ -126,6 +128,8 @@ function bus() {
           if (firstBusNaJelenachCountdownInt < 0) {
             document.getElementsByClassName("firstBusNaJelenachCountdownSec")[0].innerText = "0:00";
             document.getElementsByClassName("firstBusNaJelenachCountdownSec")[1].innerText = "0:00";
+            document.getElementsByClassName("secondBusNaJelenachCountdownSec")[0].innerText = secondBusNaJelenachCountdownSec;
+            document.getElementsByClassName("secondBusNaJelenachCountdownSec")[1].innerText = secondBusNaJelenachCountdownSec;
           } else {
             if (firstBusNaJelenachCountdownInt > 59) {
               var firstTimeNaJelenachHours = firstBusNaJelenachCountdownInt / 60;

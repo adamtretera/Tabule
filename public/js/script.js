@@ -11,7 +11,7 @@ function submitClick(){
 
 
 
-function showTime() {
+/*function showTime() {
   var date = new Date();
   var timeUTCMinutes = date.getUTCMinutes();
   timeUTCMinutes = (timeUTCMinutes < 10) ? "0" + timeUTCMinutes : timeUTCMinutes;
@@ -92,7 +92,7 @@ function showTimeLondon() {
   document.getElementById("hodinyL").textContent = timeLondon;
 
   setTimeout(showTimeLondon, 1000);
-}
+}*/
 
 var x = setInterval(function() {
   var date = new Date();
@@ -200,11 +200,11 @@ var x = setInterval(function() {
     var countdownRight = (1110 - timeNow) - 1;
     document.getElementById("countdownIDText").innerText = "Jestli máš ještě školu tak mi je tě líto..";
     document.getElementById("countdownIDText").textContent = "Jestli máš ještě školu tak mi je tě líto..";
-  } else if (timeNow > 1110 ) { //KONEC SKOLY
+  } else if (timeNow >= 1110 ) { //KONEC SKOLY
     var countdown = (1920 - timeNow) - 1;
     var timeHours = countdown / 60;
     var timeMinutes = countdown % 60;
-    var countdownRight = moment.utc().hours(timeHours).minutes(timeMinutes).format("hh:mm");
+    var countdownRight = moment.utc().hours(timeHours).minutes(timeMinutes).format("HH:mm");
     document.getElementById("countdownIDText").innerText = "Čas do začátku školy";
     document.getElementById("countdownIDText").textContent = "Čas do začátku školy";
   }
@@ -214,9 +214,3 @@ var x = setInterval(function() {
   document.getElementById("countdownID").innerText = countdownRight + ":" + secRemaining;
   document.getElementById("countdownID").textContent = countdownRight + ":" + secRemaining;
 }, 1000);
-
-showTime();
-showTimeCzech();
-showTimeTokyo();
-showTimeUSA();
-showTimeLondon();

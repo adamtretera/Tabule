@@ -25,7 +25,7 @@ function bus() {
       //SMER CHODOV
       for(var i = 0; currentTime > eval(checkTimeChodov); i++){
         checkTimeChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cas";
-        if(eval(checkTimeChodov) > currentTime){
+        if(eval(checkTimeChodov) >= currentTime){
           var firstBusChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cas";
           var firstBusNumberChodov = "work." + partOfWeek + "_SmerChodovZNaJelenach[" + i + "].cislo";
           var iPlus = i+1;
@@ -55,10 +55,36 @@ function bus() {
           var secondBusChodovCountdown = moment.duration(moment.duration(eval(secondBusChodov), "HH:mm").subtract(currentTimeDuration)).asMinutes() - 1; //kolik zbyva casu do prijezdu (v minutach)
           var secondBusChodovCountdownSec = secondBusChodovCountdown + ":" + secRemaining; //minuty + sekundy
 
-          document.getElementsByClassName("firstBusChodovCountdownSec")[0].innerText = firstBusChodovCountdownSec;
-          document.getElementsByClassName("secondBusChodovCountdownSec")[0].innerText = secondBusChodovCountdownSec;
-          document.getElementsByClassName("firstBusChodovCountdownSec")[1].innerText = firstBusChodovCountdownSec;
-          document.getElementsByClassName("secondBusChodovCountdownSec")[1].innerText = secondBusChodovCountdownSec;
+          //Countdown opatření aby se čísla nezobrazovaly v mínusu a nepretekaly pres 59min
+          var firstBusChodovCountdownInt = parseInt(firstBusChodovCountdown, 10);
+          var secondBusChodovCountdownInt = parseInt(secondBusChodovCountdown, 10);
+
+          if (firstBusChodovCountdownInt < 0) {
+            document.getElementsByClassName("firstBusChodovCountdownSec")[0].innerText = "0:00";
+            document.getElementsByClassName("firstBusChodovCountdownSec")[1].innerText = "0:00";
+            document.getElementsByClassName("secondBusChodovCountdownSec")[0].innerText = secondBusChodovCountdownSec;
+            document.getElementsByClassName("secondBusChodovCountdownSec")[1].innerText = secondBusChodovCountdownSec;
+          } else {
+            if (firstBusChodovCountdownInt > 59) {
+              var firstTimeChodovHours = firstBusChodovCountdownInt / 60;
+              var firstTimeChodovMinutes = firstBusChodovCountdownInt % 60;
+              var firstCountdownChodovRight = moment.utc().hours(firstTimeChodovHours).minutes(firstTimeChodovMinutes).format("HH:mm");
+              firstBusChodovCountdownSec = firstCountdownChodovRight + ":" + secRemaining;
+
+            } else {}
+
+            if (secondBusChodovCountdownInt > 59) {
+              var secondTimeChodovHours = secondBusChodovCountdownInt / 60;
+              var secondTimeChodovMinutes = secondBusChodovCountdownInt % 60;
+              var secondCountdownChodovRight = moment.utc().hours(secondTimeChodovHours).minutes(secondTimeChodovMinutes).format("HH:mm");
+              secondBusChodovCountdownSec = secondCountdownChodovRight + ":" + secRemaining;
+            } else {}
+
+            document.getElementsByClassName("firstBusChodovCountdownSec")[0].innerText = firstBusChodovCountdownSec;
+            document.getElementsByClassName("firstBusChodovCountdownSec")[1].innerText = firstBusChodovCountdownSec;
+            document.getElementsByClassName("secondBusChodovCountdownSec")[0].innerText = secondBusChodovCountdownSec;
+            document.getElementsByClassName("secondBusChodovCountdownSec")[1].innerText = secondBusChodovCountdownSec;
+          }
         }
       }
 
@@ -94,15 +120,40 @@ function bus() {
           var firstBusNaJelenachCountdownSec = firstBusNaJelenachCountdown + ":" + secRemaining; //minuty + sekundy
           var secondBusNaJelenachCountdown = moment.duration(moment.duration(eval(secondBusNaJelenach), "HH:mm").subtract(currentTimeDuration)).asMinutes() - 1; //kolik zbyva casu do prijezdu (v minutach)
           var secondBusNaJelenachCountdownSec = secondBusNaJelenachCountdown + ":" + secRemaining; //minuty + sekundy
-          document.getElementsByClassName("firstBusNaJelenachCountdownSec")[0].innerText = firstBusNaJelenachCountdownSec;
-          document.getElementsByClassName("secondBusNaJelenachCountdownSec")[0].innerText = secondBusNaJelenachCountdownSec;
-          document.getElementsByClassName("firstBusNaJelenachCountdownSec")[1].innerText = firstBusNaJelenachCountdownSec;
-          document.getElementsByClassName("secondBusNaJelenachCountdownSec")[1].innerText = secondBusNaJelenachCountdownSec;
 
+          //Countdown opatření aby se čísla nezobrazovaly v mínusu a nepretekaly pres 59min
+          var firstBusNaJelenachCountdownInt = parseInt(firstBusNaJelenachCountdown, 10);
+          var secondBusNaJelenachCountdownInt = parseInt(secondBusNaJelenachCountdown, 10);
 
+          if (firstBusNaJelenachCountdownInt < 0) {
+            document.getElementsByClassName("firstBusNaJelenachCountdownSec")[0].innerText = "0:00";
+            document.getElementsByClassName("firstBusNaJelenachCountdownSec")[1].innerText = "0:00";
+            document.getElementsByClassName("secondBusNaJelenachCountdownSec")[0].innerText = secondBusNaJelenachCountdownSec;
+            document.getElementsByClassName("secondBusNaJelenachCountdownSec")[1].innerText = secondBusNaJelenachCountdownSec;
+          } else {
+            if (firstBusNaJelenachCountdownInt > 59) {
+              var firstTimeNaJelenachHours = firstBusNaJelenachCountdownInt / 60;
+              var firstTimeNaJelenachMinutes = firstBusNaJelenachCountdownInt % 60;
+              var firstCountdownNaJelenachRight = moment.utc().hours(firstTimeNaJelenachHours).minutes(firstTimeNaJelenachMinutes).format("HH:mm");
+              firstBusNaJelenachCountdownSec = firstCountdownNaJelenachRight + ":" + secRemaining;
+
+            } else {}
+
+            if (secondBusNaJelenachCountdownInt > 59) {
+              var secondTimeNaJelenachHours = secondBusNaJelenachCountdownInt / 60;
+              var secondTimeNaJelenachMinutes = secondBusNaJelenachCountdownInt % 60;
+              var secondCountdownNaJelenachRight = moment.utc().hours(secondTimeNaJelenachHours).minutes(secondTimeNaJelenachMinutes).format("HH:mm");
+              secondBusNaJelenachCountdownSec = secondCountdownNaJelenachRight + ":" + secRemaining;
+            } else {}
+
+            document.getElementsByClassName("firstBusNaJelenachCountdownSec")[0].innerText = firstBusNaJelenachCountdownSec;
+            document.getElementsByClassName("firstBusNaJelenachCountdownSec")[1].innerText = firstBusNaJelenachCountdownSec;
+            document.getElementsByClassName("secondBusNaJelenachCountdownSec")[0].innerText = secondBusNaJelenachCountdownSec;
+            document.getElementsByClassName("secondBusNaJelenachCountdownSec")[1].innerText = secondBusNaJelenachCountdownSec;
         }
       }
     }
+  }
   };
 
   request.open('GET', 'js/json/busy.json', true); //adresa na kterou se ma pripojit

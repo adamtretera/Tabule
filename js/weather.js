@@ -12,7 +12,7 @@ function repeat(){
     }
   };
 
-  request.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=3067696&units=metric&APPID=d42d44c7725ef3262944099e86680c98', true); //adresa na kterou se ma pripojit
+  request.open('GET', 'https://api.openweathermap.org/data/2.5/weather?id=3067696&units=metric&APPID=d42d44c7725ef3262944099e86680c98', true); //adresa na kterou se ma pripojit
   request.send(); //odesle request
 
   setTimeout(repeat, 900*1000);
@@ -65,7 +65,7 @@ function repeatDaily(){
     }
   };
 
-  daily.open('GET', 'http://api.openweathermap.org/data/2.5/forecast?id=3067696&units=metric&APPID=d42d44c7725ef3262944099e86680c98', true); //adresa na kterou se ma pripojit
+  daily.open('GET', 'https://api.openweathermap.org/data/2.5/forecast?id=3067696&units=metric&APPID=d42d44c7725ef3262944099e86680c98', true); //adresa na kterou se ma pripojit
   daily.send(); //odesle request
 
   setTimeout(repeat, 900*1000);
