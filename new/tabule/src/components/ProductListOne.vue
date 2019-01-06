@@ -12,10 +12,11 @@
 
 <script>
 export default {
-  props: ["products"],
-  data () {
-    return {
-
+  //"computed" vezme data z "store" a dá pracuje s nimi
+  //"data" definuje/vytváří data
+  computed: {
+    products(){
+      return this.$store.state.products //pomoci this.$ odkazuje na data v "store"
     }
   }
 }
