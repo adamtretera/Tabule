@@ -6,7 +6,12 @@ function bus() {
 
       var date = new Date();
       var dayOfTheWeek = date.getDay(); //pocita se od nuly (0-6)
-      var currentTime = date.getHours() + ":" + date.getMinutes();
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      minutes = (minutes < 10) ? "0" + minutes : minutes;
+      hours = (hours < 10) ? "0" + hours : hours;
+      var currentTime = hours + ":" + minutes;
+      console.log(currentTime);
       var checkTimeChodov = "work.tyden_SmerChodovZNaJelenach[0].cas";
       var checkTimeNaJelenach = "work.tyden_SmerNaJelenachZChodov[0].cas";
       var partOfWeek = "tyden";
